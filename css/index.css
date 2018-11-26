@@ -77,11 +77,11 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .header div { line-height: 60px; }
 .header .weather .temperature { padding-right: 1vw; box-sizing: border-box; }
 .header .sns span { display: inline-block; box-sizing: border-box; }
-.header .sns i { padding: 0 1vw; cursor: pointer; }
-.header .greeting .greeting-content { padding-left: 1.5vw; }
+.header .sns i { padding: 0 1vw; cursor: pointer; color: #637181; }
+.header .greeting .greeting-content { padding-left: 1.5vw; color: #637181; }
 .header .get-more { -ms-flex-align: center; align-items: center; }
 .header .get-more .concact i { color: #914A49; cursor: pointer; }
-.header .get-more .phone-number { padding: 0 1vw; }
+.header .get-more .phone-number { padding: 0 1vw; #637181; }
 .header .select-lang { -ms-flex-align: center; align-items: center; }
 .header .select-lang .select-language { padding: 0 1vw; }
 .header .search .search-icon { padding: 0 1vw; cursor: pointer; }
@@ -90,21 +90,20 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .header .booking button:active { box-shadow: 1px 1px 2px #666; transform: translate(1px, 1px) scale(.9); }
 
 /*菜单样式*/
-.menu {
-	width: 100vw;
-	height: 60px;
-	padding: 0 2vw;
-	box-sizing: border-box;
-	-ms-flex-pack: justify; justify-content: space-between;
-}
-.menu div {
-	line-height: 60px;
-}
-.menu .logo {
-	width: 140px;
-	background: url(../imgs/logo_01.jpg) center no-repeat;
-	background-size: contain;
-}
+.navigation { width: 100vw; height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; }
+.navigation div { line-height: 60px; }
+.navigation .logo { width: 140px; background: url(../imgs/logo_01.jpg) center no-repeat; background-size: contain; }
+.navigation .menu-list .menu { margin: 0 2vw; font-family: "宋体"; font-weight: 600; position: relative; }
+.navigation .menu-list .menu a { color: #000; }
+.navigation .menu-list .menu.active a { color: #b63b4d; }
+.navigation .menu-list .menu .menu-center { opacity: 0; height: 0; z-index: -1; overflow: hidden; position: absolute; left: 50%; margin-left: -75%; width: 150%; transition: all 0.5s; }
+.navigation .menu-list .menu .submenu { width: 100%; font-weight: 500; text-align: center; background: white; color: #666666; cursor: pointer; }
+.navigation .menu-list .menu .submenu:hover { background: #444359; color: white; }
+.navigation .menu-list .menu .submenu:hover a { background: #444359; color: white; }
+.navigation .menu-list .menu:hover .menu-center { height: auto; opacity: 1; }
+
+
+
 
 
 @media screen and (max-width: 1260px) and (min-width: 910px) {
@@ -114,7 +113,12 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 
 
 @media screen and (max-width: 909px) {
-
+	.navigation .menu-list {
+		font-size: 14px;
+	}
+	.navigation .menu-list .menu {
+		margin: 0 1vw;
+	}
 
 }
 
