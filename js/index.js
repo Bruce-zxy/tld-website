@@ -40,8 +40,8 @@ function toLoadImgsLazily(selector) {
 }
 
 function toSliceDomContent(limit, dom) {
-	var content = sessionStorage.getItem("greeting") || dom.html();
-	content = content.replace('...', '');
+	var content = dom.attr("data-content");
+	content = content.replace("...", "");
 	if (content.length > limit) {
 		dom.html(content.slice(0, limit) + "...");
 	} else {
@@ -50,12 +50,19 @@ function toSliceDomContent(limit, dom) {
 }
 
 function onWindowResizing(e) {
-	var left_width  = e.data.leftWidth;
-	var right_width = e.data.rightWidth;
-	var dom_content = e.data.dom;
+	var left_width  = $(".header .left .weather").width() + $(".header .left .sns").width();
+	var right_width = $(".header .right").width();
+	var dom_content = $(".greeting .greeting-content");
 	var windowWidth = $(window).width();
 	var font_size   = getComputedStyle(dom_content[0]).fontSize.slice(0, -2);
-	toSliceDomContent(Math.floor((windowWidth - (left_width + right_width + 80)) / font_size), dom_content)
+	if (windowWidth <= 640) {
+		$("body").html("请访问移动端页面以获得更好的用户体验！");
+		$(window).off("resize").on("resize", function () {
+			if ($(window).width() > 640) window.location.reload();
+		});
+	} else {
+		toSliceDomContent(Math.floor((windowWidth - (left_width + right_width + 80)) / font_size), dom_content)
+	}
 }
 
 $(function() {
@@ -79,17 +86,8 @@ $(function() {
 	toLoadImgsLazily('body');
 
 	// 限制greeting的字数，多余的用溢出省略符代替
-	var greeting_content    = $('.greeting .greeting-content');
-	sessionStorage.greeting = greeting_content.html();
-	var header_left_width   = $(".header .left .weather").width() + $(".header .left .sns").width();
-	var header_right_width  = $(".header .right").width();
-	var resizing_data       = {
-        leftWidth: header_left_width,
-        rightWidth: header_right_width, 
-        dom: greeting_content
-    }
-    onWindowResizing({ data: resizing_data });
-    $(window).on("resize", resizing_data, onWindowResizing);
+    onWindowResizing();
+    $(window).on("resize", onWindowResizing);
 
 
 })

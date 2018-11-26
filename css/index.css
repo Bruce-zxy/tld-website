@@ -15,6 +15,7 @@ hr { border-bottom: 1px solid #FFFFFF; border-top: 1px solid #E4E4E4; border-wid
 ol, ul { list-style-image: none; list-style-position: outside; list-style-type: none; }
 caption, th { text-align: left; }
 q:before, q:after, blockquote:before, blockquote:after { content: ""; }
+a, a:hover, a:active, a:focus, a:visited { text-decoration: none; color: #666666; }
 button { border: none; background: transparent; outline: none; cursor: pointer; color: #FFF }
 /*css reset*/
 
@@ -46,7 +47,7 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 /*css preset*/
 
 /*css main*/
-html { width: 100vw; }
+/*html { width: 100vw; }*/
 /*天气图标样式*/
 .weather svg { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
 .divider-vertical { display: inline-block; width: 1px; background-color: #EEE; }
@@ -72,7 +73,7 @@ html { width: 100vw; }
 }
 
 /*头部样式*/
-.header { width: 100vw; height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; }
+.header { width: 100vw; height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; overflow: hidden; margin-bottom: 1px; border-bottom: 1px solid #CCC; }
 .header div { line-height: 60px; }
 .header .weather .temperature { padding-right: 1vw; box-sizing: border-box; }
 .header .sns span { display: inline-block; box-sizing: border-box; }
@@ -88,6 +89,22 @@ html { width: 100vw; }
 .header .booking button { background-color: #914A49; padding: 8px 12px; box-shadow: 1px 1px 4px #666;  }
 .header .booking button:active { box-shadow: 1px 1px 2px #666; transform: translate(1px, 1px) scale(.9); }
 
+/*菜单样式*/
+.menu {
+	width: 100vw;
+	height: 60px;
+	padding: 0 2vw;
+	box-sizing: border-box;
+	-ms-flex-pack: justify; justify-content: space-between;
+}
+.menu div {
+	line-height: 60px;
+}
+.menu .logo {
+	width: 140px;
+	background: url(../imgs/logo_01.jpg) center no-repeat;
+	background-size: contain;
+}
 
 
 @media screen and (max-width: 1260px) and (min-width: 910px) {
