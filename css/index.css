@@ -39,6 +39,10 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .d-b { display: block; }
 .d-ib { display: inline-block; }
 .d-f { display: -ms-flexbox; display: flex  }
+.transition { transition: all .15s ease-in-out; }
+.transition:active, .transition:focus, .transition:hover, .transition:visited { transition: all .15s ease-in-out; }
+.click-animation { transform: scale(1); }
+.click-animation:active { transform: scale(.9); }
 /*css preset*/
 
 /*css main*/
@@ -70,20 +74,19 @@ html { width: 100vw; }
 /*头部样式*/
 .header { width: 100vw; height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; }
 .header div { line-height: 60px; }
-.header .weather {	/*width: 8.6vw;*/ }
 .header .weather .temperature { padding-right: 1vw; box-sizing: border-box; }
-.header .sns {	/*width: 7.3vw;*/ }
 .header .sns span { display: inline-block; box-sizing: border-box; }
-.header .sns i { padding: 0 1vw; }
+.header .sns i { padding: 0 1vw; cursor: pointer; }
 .header .greeting .greeting-content { padding-left: 1.5vw; }
 .header .get-more { -ms-flex-align: center; align-items: center; }
 .header .get-more .concact i { color: #914A49; cursor: pointer; }
 .header .get-more .phone-number { padding: 0 1vw; }
 .header .select-lang { -ms-flex-align: center; align-items: center; }
 .header .select-lang .select-language { padding: 0 1vw; }
-.header .search .search-icon { padding: 0 1vw; }
+.header .search .search-icon { padding: 0 1vw; cursor: pointer; }
 .header .booking { padding-left: 1vw; }
-.header .booking button { background-color: #914A49; padding: 8px 12px; }
+.header .booking button { background-color: #914A49; padding: 8px 12px; box-shadow: 1px 1px 4px #666;  }
+.header .booking button:active { box-shadow: 1px 1px 2px #666; transform: translate(1px, 1px) scale(.9); }
 
 
 

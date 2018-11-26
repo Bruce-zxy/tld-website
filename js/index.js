@@ -33,34 +33,29 @@ function toLoadImgsLazily(selector) {
 		return DIV;
 	}
     var imgs_container = document.querySelectorAll(selector + ' .lazy-load-img');
-    Array.from(imgs_container).forEach(img => {
+    Array.prototype.slice.call(imgs_container).forEach(function(img) {
         // 所有部分缓加载
         loadImg(img);
 	})
 }
 
-function toSliceGreetingContent(limit) {
-	var content = sessionStorage.getItem("greeting") || $('.greeting .greeting-content').html();
+function toSliceDomContent(limit, dom) {
+	var content = sessionStorage.getItem("greeting") || dom.html();
 	content = content.replace('...', '');
 	if (content.length > limit) {
-		greeting_content.html(content.slice(0, limit) + "...");
+		dom.html(content.slice(0, limit) + "...");
+	} else {
+		dom.html(content.slice(0, limit));
 	}
 }
 
 function onWindowResizing(e) {
-	console.log('test');
-	var leftWidth = e.data.leftWidth;
-	var rightWidth = e.data.rightWidth;
+	var left_width  = e.data.leftWidth;
+	var right_width = e.data.rightWidth;
+	var dom_content = e.data.dom;
 	var windowWidth = $(window).width();
-	if (leftWidth + rightWidth + 60 >= windowWidth) {
-		var new_limit = Math.floor(((leftWidth + rightWidth + 60) - windowWidth) / 12);
-		console.log(new_limit);
-		toSliceGreetingContent(e.data.limit - new_limit);
-	} else {
-
-	}
-
-
+	var font_size   = getComputedStyle(dom_content[0]).fontSize.slice(0, -2);
+	toSliceDomContent(Math.floor((windowWidth - (left_width + right_width + 80)) / font_size), dom_content)
 }
 
 $(function() {
@@ -84,12 +79,14 @@ $(function() {
 	toLoadImgsLazily('body');
 
 	// 限制greeting的字数，多余的用溢出省略符代替
-	sessionStorage.setItem('greeting', $('.greeting .greeting-content').html());
-	var header_left_width = $(".header .left .weather").width() + $(".header .left .sns").width();
-	var header_right_width = $(".header .right").width();
-	var resizing_data = {
+	var greeting_content    = $('.greeting .greeting-content');
+	sessionStorage.greeting = greeting_content.html();
+	var header_left_width   = $(".header .left .weather").width() + $(".header .left .sns").width();
+	var header_right_width  = $(".header .right").width();
+	var resizing_data       = {
         leftWidth: header_left_width,
-        rightWidth: header_right_width
+        rightWidth: header_right_width, 
+        dom: greeting_content
     }
     onWindowResizing({ data: resizing_data });
     $(window).on("resize", resizing_data, onWindowResizing);
