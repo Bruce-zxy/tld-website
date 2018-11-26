@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'FZLTHJW';
+	src: url('FZLTHJW.eot'); /* IE9 Compat Modes */
+	src: url('FZLTHJW.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+	url('FZLTHJW.woff') format('woff'), /* Modern Browsers */
+	url('FZLTHJW.ttf')  format('truetype'), /* Safari, Android, iOS */              
+	url('FZLTHJW.svg#FZLTHJW') format('svg'); /* Legacy iOS */
+}
+@font-face {
+	font-family: 'Baskerville_Old_Face';
+	src: url('Baskerville_Old_Face.eot'); /* IE9 Compat Modes */
+	src: url('Baskerville_Old_Face.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+	url('Baskerville_Old_Face.woff') format('woff'), /* Modern Browsers */
+	url('Baskerville_Old_Face.ttf')  format('truetype'), /* Safari, Android, iOS */              
+	url('Baskerville_Old_Face.svg#Baskerville_Old_Face') format('svg'); /* Legacy iOS */
+}
