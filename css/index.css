@@ -34,9 +34,7 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .fs-72 { font-size: 72px; }
 .f-FZLTHJW { font-family: "FZLTHJW"; }
 .f-Baskerville { font-family: "Baskerville_Old_Face"; }
-
 .h-22 { height: 22px; }
-
 .d-i { display: line; }
 .d-b { display: block; }
 .d-ib { display: inline-block; }
@@ -84,14 +82,8 @@ html { width: 100vw; }
 .header .select-lang { -ms-flex-align: center; align-items: center; }
 .header .select-lang .select-language { padding: 0 1vw; }
 .header .search .search-icon { padding: 0 1vw; }
-
-.header .booking {
-	padding-left: 1vw;
-}
-.header .booking button {
-	background-color: #914A49;
-	padding: 8px 12px;
-}
+.header .booking { padding-left: 1vw; }
+.header .booking button { background-color: #914A49; padding: 8px 12px; }
 
 
 
