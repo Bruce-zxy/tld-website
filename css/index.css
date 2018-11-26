@@ -1,8 +1,8 @@
 /*css reset*/
-html { overflow-x: auto; overflow-y: scroll; }
+html { margin: 0; overflow: auto; }
 body, dl, dt, dd, ul, ol, li, pre, form, fieldset, input, p, blockquote, th, td { font-weight: 400; margin: 0; padding: 0; }
 h1, h2, h3, h4, h4, h5 { margin: 0; padding: 0; }
-body { background-color: #FFFFFF; color: #666666; font-family: Helvetica, Arial, sans-serif; font-size: 12px; padding: 0 10px; text-align: left; }
+body { width: 100%; background-color: #FFFFFF; color: #666666; box-sizing: border-box; font-family: "microsoft yahei", Arial, sans-serif; font-size: 12px; text-align: left; }
 select { font-size: 12px; }
 table { border-collapse: collapse; }
 fieldset, img { border: 0 none; }
@@ -15,6 +15,7 @@ hr { border-bottom: 1px solid #FFFFFF; border-top: 1px solid #E4E4E4; border-wid
 ol, ul { list-style-image: none; list-style-position: outside; list-style-type: none; }
 caption, th { text-align: left; }
 q:before, q:after, blockquote:before, blockquote:after { content: ""; }
+button { border: none; background: transparent; outline: none; cursor: pointer; color: #FFF }
 /*css reset*/
 
 /*css preset*/
@@ -33,13 +34,76 @@ q:before, q:after, blockquote:before, blockquote:after { content: ""; }
 .fs-72 { font-size: 72px; }
 .f-FZLTHJW { font-family: "FZLTHJW"; }
 .f-Baskerville { font-family: "Baskerville_Old_Face"; }
+
+.h-22 { height: 22px; }
+
+.d-i { display: line; }
+.d-b { display: block; }
+.d-ib { display: inline-block; }
+.d-f { display: -ms-flexbox; display: flex  }
 /*css preset*/
 
 /*css main*/
-body {
-	width: 1920px;
-	background: url(../imgs/banner_01.jpg) center no-repeat;
-	background-size: contain;
+html { width: 100vw; }
+/*天气图标样式*/
+.weather svg { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+.divider-vertical { display: inline-block; width: 1px; background-color: #EEE; }
+/*图片懒加载*/
+.lazy-load-img { display: block; position: relative; z-index: 9; background: radial-gradient(#eeeeee, #cccccc); }
+.lazy-load-img img { height: 100%; }
+.lazy-load-base { height: 9em; left: 50%; margin: -7.5em; padding: 3em; position: absolute; top: 50%; width: 9em; transform: rotateX(45deg) rotateZ(45deg); transform-style: preserve-3d; }
+.lazy-load-cube, .lazy-load-cube:after, .lazy-load-cube:before { content: ''; float: left; height: 3em; position: absolute; width: 3em; }
+.lazy-load-cube { background-color: #05afd1; position: relative; transform: translateZ(3em); transform-style: preserve-3d; transition: .25s; box-shadow: 13em 13em 1.5em rgba(0, 0, 0, 0.1); animation: anim 1s infinite; }
+.lazy-load-cube:after { background-color: #049dbc; transform: rotateX(-90deg) translateY(3em); transform-origin: 100% 100%; }
+.lazy-load-cube:before { background-color: #048ca7; transform: rotateY(90deg) translateX(3em); transform-origin: 100% 0; }
+.lazy-load-cube:nth-child(1) { animation-delay: 0.05s; }
+.lazy-load-cube:nth-child(2) { animation-delay: 0.1s; }
+.lazy-load-cube:nth-child(3) { animation-delay: 0.15s; }
+.lazy-load-cube:nth-child(4) { animation-delay: 0.2s; }
+.lazy-load-cube:nth-child(5) { animation-delay: 0.25s; }
+.lazy-load-cube:nth-child(6) { animation-delay: 0.3s; }
+.lazy-load-cube:nth-child(7) { animation-delay: 0.35s; }
+.lazy-load-cube:nth-child(8) { animation-delay: 0.4s; }
+.lazy-load-cube:nth-child(9) { animation-delay: 0.45s; }
+@keyframes anim {
+	50% { transform: translateZ(0.5em); }
+}
+
+/*头部样式*/
+.header { width: 100vw; height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; }
+.header div { line-height: 60px; }
+.header .weather {	/*width: 8.6vw;*/ }
+.header .weather .temperature { padding-right: 1vw; box-sizing: border-box; }
+.header .sns {	/*width: 7.3vw;*/ }
+.header .sns span { display: inline-block; box-sizing: border-box; }
+.header .sns i { padding: 0 1vw; }
+.header .greeting .greeting-content { padding-left: 1.5vw; }
+.header .get-more { -ms-flex-align: center; align-items: center; }
+.header .get-more .concact i { color: #914A49; cursor: pointer; }
+.header .get-more .phone-number { padding: 0 1vw; }
+.header .select-lang { -ms-flex-align: center; align-items: center; }
+.header .select-lang .select-language { padding: 0 1vw; }
+.header .search .search-icon { padding: 0 1vw; }
+
+.header .booking {
+	padding-left: 1vw;
+}
+.header .booking button {
+	background-color: #914A49;
+	padding: 8px 12px;
+}
+
+
+
+@media screen and (max-width: 1260px) and (min-width: 910px) {
+
+
+}
+
+
+@media screen and (max-width: 909px) {
+
+
 }
 
 
