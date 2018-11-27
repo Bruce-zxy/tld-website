@@ -3,6 +3,7 @@ html { margin: 0; overflow: auto; }
 body, dl, dt, dd, ul, ol, li, pre, form, fieldset, input, p, blockquote, th, td { font-weight: 400; margin: 0; padding: 0; }
 h1, h2, h3, h4, h4, h5 { margin: 0; padding: 0; }
 body { width: 100%; background-color: #FFFFFF; color: #666666; box-sizing: border-box; font-family: "microsoft yahei", Arial, sans-serif; font-size: 12px; text-align: left; }
+img { border: 0; vertical-align: top; }
 select { font-size: 12px; }
 table { border-collapse: collapse; }
 fieldset, img { border: 0 none; }
@@ -44,16 +45,20 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .transition:active, .transition:focus, .transition:hover, .transition:visited { transition: all .15s ease-in-out; }
 .click-animation { transform: scale(1); }
 .click-animation:active { transform: scale(.9); }
+.w-100vw { width: 100vw }
+.w-22 { width: 22px; }
 /*css preset*/
 
 /*css main*/
-/*html { width: 100vw; }*/
+html, body { height: 100vh; width: 100vw; }
+body { overflow: auto; }
 /*天气图标样式*/
 .weather svg { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
 .divider-vertical { display: inline-block; width: 1px; background-color: #EEE; }
+.divider-horizental { display: inline-block; height: 1px; background-color: #EEE; }
 /*图片懒加载*/
 .lazy-load-img { display: block; position: relative; z-index: 9; background: radial-gradient(#eeeeee, #cccccc); }
-.lazy-load-img img { height: 100%; }
+.lazy-load-img img { height: 100%; -webkit-user-drag: none; }
 .lazy-load-base { height: 9em; left: 50%; margin: -7.5em; padding: 3em; position: absolute; top: 50%; width: 9em; transform: rotateX(45deg) rotateZ(45deg); transform-style: preserve-3d; }
 .lazy-load-cube, .lazy-load-cube:after, .lazy-load-cube:before { content: ''; float: left; height: 3em; position: absolute; width: 3em; }
 .lazy-load-cube { background-color: #05afd1; position: relative; transform: translateZ(3em); transform-style: preserve-3d; transition: .25s; box-shadow: 13em 13em 1.5em rgba(0, 0, 0, 0.1); animation: anim 1s infinite; }
@@ -73,7 +78,7 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 }
 
 /*头部样式*/
-.header { width: 100vw; height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; overflow: hidden; margin-bottom: 1px; border-bottom: 1px solid #CCC; }
+.header { height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; overflow: hidden; position: relative; z-index: 50 }
 .header div { line-height: 60px; }
 .header .weather .temperature { padding-right: 1vw; box-sizing: border-box; }
 .header .sns span { display: inline-block; box-sizing: border-box; }
@@ -90,18 +95,79 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .header .booking button:active { box-shadow: 1px 1px 2px #666; transform: translate(1px, 1px) scale(.9); }
 
 /*菜单样式*/
-.navigation { width: 100vw; height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; }
+.navigation { height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; box-shadow: 0 2px 4px #666; position: relative; z-index: 49 }
 .navigation div { line-height: 60px; }
 .navigation .logo { width: 140px; background: url(../imgs/logo_01.jpg) center no-repeat; background-size: contain; }
 .navigation .menu-list .menu { margin: 0 2vw; font-family: "宋体"; font-weight: 600; position: relative; }
 .navigation .menu-list .menu a { color: #000; }
 .navigation .menu-list .menu.active a { color: #b63b4d; }
-.navigation .menu-list .menu .menu-center { opacity: 0; height: 0; z-index: -1; overflow: hidden; position: absolute; left: 50%; margin-left: -75%; width: 150%; transition: all 0.5s; }
+.navigation .menu-list .menu .menu-center { opacity: 0; height: 0; z-index: -1; overflow: hidden; position: absolute; left: 50%; margin-left: -75%; width: 150%; }
 .navigation .menu-list .menu .submenu { width: 100%; font-weight: 500; text-align: center; background: white; color: #666666; cursor: pointer; }
 .navigation .menu-list .menu .submenu:hover { background: #444359; color: white; }
 .navigation .menu-list .menu .submenu:hover a { background: #444359; color: white; }
 .navigation .menu-list .menu:hover .menu-center { height: auto; opacity: 1; }
 
+/*轮播图*/
+.slider { overflow: hidden; }
+.shutter { overflow: hidden; position: relative; }
+.shutter-img { z-index: 1; }
+.shutter-img, .shutter-img a { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.shutter-img a { cursor: default; }
+.shutter-img a > img { width: 100%; height: 100%; }
+.shutter-img .created { overflow: hidden; position: absolute; z-index: 20; }
+.shutter-img a:not(.active) div { opacity: 0; }
+.shutter-img .created div { display: none; }
+.shutter-btn li { position: absolute; z-index: 2; top: 50%; margin-top: -45px; cursor: pointer; }
+.shutter-btn li.prev { left: 20px; color: #FFF; }
+.shutter-btn li.next { right: 20px; color: #FFF; }
+.shutter-btn li.prev:hover, .shutter-btn li.next:hover { color: #EEE; transform: scale(.95); transform-origin: 50%; }
+
+/*右侧滚动条*/
+.mCustomScrollbar .mCSB_container { margin: 0; }
+.mCustomScrollbar .mCSB_scrollTools { z-index: 999; }
+
+/*景点展览*/
+.scenic-list {
+	height: 280px;
+	margin-top: 1px;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+}
+.scenic-list .scenic-container {
+	height: 100%;
+	width: 25vw;
+	overflow: hidden;
+	margin: 0 1px;
+	position: relative;
+}
+.scenic-list .scenic-container img {
+	position: absolute;
+	z-index: 20;
+	top: 0;
+    left: 50%;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.scenic-list .scenic-container:hover img {
+	transition: all .5s ease-in-out;
+	transform: scale(1.05);
+}
+.scenic-list .scenic-container .scenic-mask {
+	position: absolute;
+	display: block;
+	height: 100%;
+	z-index: 30;
+	left: 0;
+	top: -280px;
+	color: #FFF;
+	background-color: transparent;
+	transition: all .5s ease-in-out;
+}
+.scenic-list .scenic-container:hover .scenic-mask {
+	background-color: rgba(0,0,0,.75);
+	top: 0;
+	transition: all .25s ease-in-out;
+}
 
 
 

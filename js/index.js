@@ -1,7 +1,7 @@
 var weather_icons = ["qing", "duoyun", "yin", "zhenyu", "leidian", "bingbao", "xiaoxue", "xiaoyu", "dayu", "dayu", "dayu", "dayu", "dayu", "zhenxue", "xiaoxue", "daxue", "daxue", "daxue", "wu", "bingbao", "yangsha", "dayu", "dayu", "dayu", "dayu", "dayu", "daxue", "daxue", "daxue", "yangsha", "yangsha", "yangsha", "mai"];
 
-function toLoadImgsLazily(selector) {
-	function loadImg(el) {
+function toLoadImgsLazily(selector, fn) {
+	function loadImg(el, i) {
 		var img_dom = el.children[0];
 	    if(img_dom.classList.contains("placeholder-img")) {
 	    	// 可使用CSS3占位图
@@ -15,6 +15,7 @@ function toLoadImgsLazily(selector) {
 	        	if (!!el.querySelectorAll(".placeholder-img").length) el.removeChild(img_dom);
 	        	if (!!el.querySelectorAll(".lazy-load-container").length) el.removeChild(div_loader);
 	        	el.appendChild(img);
+	        	fn(img, i);
 	        }
 	    }
 	}
@@ -33,9 +34,9 @@ function toLoadImgsLazily(selector) {
 		return DIV;
 	}
     var imgs_container = document.querySelectorAll(selector + ' .lazy-load-img');
-    Array.prototype.slice.call(imgs_container).forEach(function(img) {
+    Array.prototype.slice.call(imgs_container).forEach(function(img, i) {
         // 所有部分缓加载
-        loadImg(img);
+        loadImg(img, i);
 	})
 }
 
@@ -66,6 +67,16 @@ function onWindowResizing(e) {
 }
 
 $(function() {
+
+    $('.shutter').shutter({
+        shutterW: "100%", // 容器宽度
+        shutterH: 780, // 容器高度
+        isAutoPlay: true, // 是否自动播放
+        playInterval: 3000, // 自动播放时间
+        curDisplay: 1, // 当前显示页
+        fullPage: false // 是否全屏展示
+    });
+
 	// $.ajax({
 	//     type: 'get',
 	//     url: 'http://api.k780.com/?app=weather.today&weaid=1122&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data',
@@ -83,12 +94,19 @@ $(function() {
 	// });
 	
 	// Emmet syntax: div.lazy-load-img>img.placeholder-img[data-src=""], 同时去掉src属性
-	toLoadImgsLazily('body');
+	toLoadImgsLazily('body', function(img, i) {
+		$($(".lazy-load-img img")[i]).css("margin-left", -img.width/2);
+		console.log(-img.width/2)
+	});
 
 	// 限制greeting的字数，多余的用溢出省略符代替
     onWindowResizing();
     $(window).on("resize", onWindowResizing);
-
+    $("body").mCustomScrollbar({
+    	scrollInertia:600,
+    	autoDraggerLength:false, 
+    	autoHideScrollbar: true
+    });
 
 })
 
