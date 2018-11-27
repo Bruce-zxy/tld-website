@@ -101,7 +101,18 @@ body { overflow: auto; }
 .navigation .menu-list .menu { margin: 0 2vw; font-family: "宋体"; font-weight: 600; position: relative; }
 .navigation .menu-list .menu a { color: #000; }
 .navigation .menu-list .menu.active a { color: #b63b4d; }
-.navigation .menu-list .menu .menu-center { opacity: 0; height: 0; z-index: -1; overflow: hidden; position: absolute; left: 50%; margin-left: -75%; width: 150%; }
+.navigation .menu-list .menu .menu-center {
+	opacity: 0;
+	height: 0;
+	z-index: -1;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	margin-left: -75%;
+	width: 150%;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 1px 4px 4px #333;
+}
 .navigation .menu-list .menu .submenu { width: 100%; font-weight: 500; text-align: center; background: white; color: #666666; cursor: pointer; }
 .navigation .menu-list .menu .submenu:hover { background: #444359; color: white; }
 .navigation .menu-list .menu .submenu:hover a { background: #444359; color: white; }
