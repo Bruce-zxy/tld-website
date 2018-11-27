@@ -6,7 +6,7 @@ body { width: 100%; background-color: #FFFFFF; color: #666666; box-sizing: borde
 img { border: 0; vertical-align: top; }
 select { font-size: 12px; }
 table { border-collapse: collapse; }
-fieldset, img { border: 0 none; }
+fieldset, img { border: 0 none; -webkit-user-drag: none; }
 fieldset { margin: 0; padding: 0; }
 fieldset p { margin: 0; padding: 0 0 0 8px; }
 legend { display: none; }
@@ -16,7 +16,7 @@ hr { border-bottom: 1px solid #FFFFFF; border-top: 1px solid #E4E4E4; border-wid
 ol, ul { list-style-image: none; list-style-position: outside; list-style-type: none; }
 caption, th { text-align: left; }
 q:before, q:after, blockquote:before, blockquote:after { content: ""; }
-a, a:hover, a:active, a:focus, a:visited { text-decoration: none; color: #666666; }
+a, a:hover, a:active, a:focus, a:visited { text-decoration: none; color: #666666; -webkit-user-drag: none; }
 button { border: none; background: transparent; outline: none; cursor: pointer; color: #FFF }
 /*css reset*/
 
@@ -34,6 +34,7 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .fs-60 { font-size: 60px; }
 .fs-70 { font-size: 70px; }
 .fs-72 { font-size: 72px; }
+.fw-600 { font-weight: 600; }
 .f-FZLTHJW { font-family: "FZLTHJW"; }
 .f-Baskerville { font-family: "Baskerville_Old_Face"; }
 .h-22 { height: 22px; }
@@ -58,7 +59,7 @@ body { overflow: auto; }
 .divider-horizental { display: inline-block; height: 1px; background-color: #EEE; }
 /*图片懒加载*/
 .lazy-load-img { display: block; position: relative; z-index: 9; background: radial-gradient(#eeeeee, #cccccc); }
-.lazy-load-img img { height: 100%; -webkit-user-drag: none; }
+.lazy-load-img img { height: 100%; }
 .lazy-load-base { height: 9em; left: 50%; margin: -7.5em; padding: 3em; position: absolute; top: 50%; width: 9em; transform: rotateX(45deg) rotateZ(45deg); transform-style: preserve-3d; }
 .lazy-load-cube, .lazy-load-cube:after, .lazy-load-cube:before { content: ''; float: left; height: 3em; position: absolute; width: 3em; }
 .lazy-load-cube { background-color: #05afd1; position: relative; transform: translateZ(3em); transform-style: preserve-3d; transition: .25s; box-shadow: 13em 13em 1.5em rgba(0, 0, 0, 0.1); animation: anim 1s infinite; }
@@ -101,18 +102,7 @@ body { overflow: auto; }
 .navigation .menu-list .menu { margin: 0 2vw; font-family: "宋体"; font-weight: 600; position: relative; }
 .navigation .menu-list .menu a { color: #000; }
 .navigation .menu-list .menu.active a { color: #b63b4d; }
-.navigation .menu-list .menu .menu-center {
-	opacity: 0;
-	height: 0;
-	z-index: -1;
-	overflow: hidden;
-	position: absolute;
-	left: 50%;
-	margin-left: -75%;
-	width: 150%;
-	border-radius: 0 0 4px 4px;
-	box-shadow: 1px 4px 4px #333;
-}
+.navigation .menu-list .menu .menu-center { opacity: 0; height: 0; z-index: -1; overflow: hidden; position: absolute; left: 50%; margin-left: -75%; width: 150%; border-radius: 0 0 4px 4px; box-shadow: 1px 4px 4px #333; }
 .navigation .menu-list .menu .submenu { width: 100%; font-weight: 500; text-align: center; background: white; color: #666666; cursor: pointer; }
 .navigation .menu-list .menu .submenu:hover { background: #444359; color: white; }
 .navigation .menu-list .menu .submenu:hover a { background: #444359; color: white; }
@@ -138,48 +128,18 @@ body { overflow: auto; }
 .mCustomScrollbar .mCSB_scrollTools { z-index: 999; }
 
 /*景点展览*/
-.scenic-list {
-	height: 280px;
-	margin-top: 1px;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-}
-.scenic-list .scenic-container {
-	height: 100%;
-	width: 25vw;
-	overflow: hidden;
-	margin: 0 1px;
-	position: relative;
-}
-.scenic-list .scenic-container img {
-	position: absolute;
-	z-index: 20;
-	top: 0;
-    left: 50%;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
-}
-.scenic-list .scenic-container:hover img {
-	transition: all .5s ease-in-out;
-	transform: scale(1.05);
-}
-.scenic-list .scenic-container .scenic-mask {
-	position: absolute;
-	display: block;
-	height: 100%;
-	z-index: 30;
-	left: 0;
-	top: -280px;
-	color: #FFF;
-	background-color: transparent;
-	transition: all .5s ease-in-out;
-}
-.scenic-list .scenic-container:hover .scenic-mask {
-	background-color: rgba(0,0,0,.75);
-	top: 0;
-	transition: all .25s ease-in-out;
-}
-
+.scenic-list { height: 280px; margin-top: 1px; -ms-flex-pack: justify; justify-content: space-between; }
+.scenic-list .scenic-container { height: 100%; width: 25vw; overflow: hidden; margin: 0 1px; position: relative; }
+.scenic-list .scenic-container img { position: absolute; z-index: 20; top: 0; left: 50%; cursor: pointer; transition: all .5s ease-in-out; }
+.scenic-list .scenic-container:hover img { transition: all .5s ease-in-out; transform: scale(1.05); }
+.scenic-list .scenic-container .scenic-mask { position: absolute; height: 100%; z-index: 30; left: 0; top: -280px; color: #FFF; background-color: transparent; transition: all .5s ease-in-out; padding: 0 30px; }
+.scenic-list .scenic-container:hover .scenic-mask { background-color: rgba(0, 0, 0, .75); top: 0; transition: all .25s ease-in-out; }
+.scenic-list .scenic-mask .scenic-icon { margin-top: 45px; }
+.scenic-list .scenic-mask .scenic-name { margin-top: 10px; }
+.scenic-list .scenic-mask .divider-container { -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; padding: 10px 0; }
+.scenic-list .scenic-mask .divider-container .divider-horizental { width: 60%; }
+.scenic-list .scenic-mask p { text-align: center; }
+.scenic-list .scenic-mask .scenic-description { padding-top: 20px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 
 
 
@@ -196,6 +156,7 @@ body { overflow: auto; }
 	.navigation .menu-list .menu {
 		margin: 0 1vw;
 	}
+
 
 }
 
