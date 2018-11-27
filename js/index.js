@@ -27,7 +27,7 @@ function toLoadImgsLazily(selector, fn) {
 		for (var i = 0; i < 9; i++) {
 			var DIV_CUBE = document.createElement("div");
 			DIV_CUBE.className = "lazy-load-cube";
-			DIV_BASE.append(DIV_CUBE);
+			DIV_BASE.appendChild(DIV_CUBE);
 		}
 		DIV.appendChild(DIV_BASE);
 		el.appendChild(DIV);
@@ -96,13 +96,18 @@ $(function() {
 	// Emmet syntax: div.lazy-load-img>img.placeholder-img[data-src=""], 同时去掉src属性
 	toLoadImgsLazily('body', function(img, i) {
 		$($(".lazy-load-img img")[i]).css("margin-left", -img.width/2);
-		console.log(-img.width/2)
+		$($(".lazy-load-img img")[i]).css("margin-top", -img.height/2);
 	});
 
 	// 限制greeting的字数，多余的用溢出省略符代替
     onWindowResizing();
     $(window).on("resize", onWindowResizing);
     $("body").mCustomScrollbar({
+    	scrollInertia:600,
+    	autoDraggerLength:false, 
+    	autoHideScrollbar: true
+    });
+    $(".activity .activity-intro").mCustomScrollbar({
     	scrollInertia:600,
     	autoDraggerLength:false, 
     	autoHideScrollbar: true

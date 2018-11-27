@@ -37,6 +37,8 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .fw-600 { font-weight: 600; }
 .f-FZLTHJW { font-family: "FZLTHJW"; }
 .f-Baskerville { font-family: "Baskerville_Old_Face"; }
+.f-MFYanSong-Regular { font-family: "MFYanSong-Regular"; }
+.f-BaronNeue { font-family: "BaronNeue"; }
 .h-22 { height: 22px; }
 .d-i { display: line; }
 .d-b { display: block; }
@@ -130,7 +132,7 @@ body { overflow: auto; }
 /*景点展览*/
 .scenic-list { height: 280px; margin-top: 1px; -ms-flex-pack: justify; justify-content: space-between; }
 .scenic-list .scenic-container { height: 100%; width: 25vw; overflow: hidden; margin: 0 1px; position: relative; }
-.scenic-list .scenic-container img { position: absolute; z-index: 20; top: 0; left: 50%; cursor: pointer; transition: all .5s ease-in-out; }
+.scenic-list .scenic-container img { position: absolute; z-index: 20; top: 0; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out; }
 .scenic-list .scenic-container:hover img { transition: all .5s ease-in-out; transform: scale(1.05); }
 .scenic-list .scenic-container .scenic-mask { position: absolute; height: 100%; z-index: 30; left: 0; top: -280px; color: #FFF; background-color: transparent; transition: all .5s ease-in-out; padding: 0 30px; }
 .scenic-list .scenic-container:hover .scenic-mask { background-color: rgba(0, 0, 0, .75); top: 0; transition: all .25s ease-in-out; }
@@ -141,24 +143,111 @@ body { overflow: auto; }
 .scenic-list .scenic-mask p { text-align: center; }
 .scenic-list .scenic-mask .scenic-description { padding-top: 20px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 
+/*主篇*/
+.main { width: 73vw; margin: 0 auto; padding: 60px 0; }
+.main .main-title { font-family: "宋体"; color: #333333; font-weight: 600; text-align: center; }
+.main .main-subtitle { color: #637181; text-align: center; margin: 10px 0 60px; }
+.main .main-banner { height: 300px; background-position: center; background-repeat: no-repeat; background-size: cover; margin-bottom: 50px; }
+.main .main-intro { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; }
+.main .main-intro>div { margin-right: 2vw; }
+.main .main-intro>div:last-child { margin-right: 0; }
+.main .main-intro .intro-title { font-family: "宋体"; color: #333; margin-bottom: 10px; }
+.main .main-intro .intro-title i { margin-right: .5vw; color: #924a49; }
+.main .main-intro .intro-content { color: #637181; line-height: 32px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; margin-bottom: 60px; }
+.main .main-intro .main-guide { height: 600px; overflow: hidden; position: relative; margin-bottom: 60px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-user-drag: none; }
+.main .main-intro .main-guide img { position: absolute; z-index: 20; top: 0; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out; }
+.main .main-intro .main-guide:hover img { transition: all .5s ease-in-out; transform: scale(1.05); }
+.main .main-intro .main-guide .intro-mask { position: absolute; height: 100%; z-index: 30; left: 0; top: 0; color: #FFF; background-color: rgba(0, 0, 0, .6); transition: all .5s ease-in-out; padding: 0 30px; text-align: center; }
+.main .main-intro .intro-mask p { text-align: center; }
+.main .main-intro .intro-mask .intro-icon { margin: 140px 0 10px }
+.main .main-intro .intro-mask .intro-name { font-family: "宋体"; color: #FFF; margin-bottom: 10px; }
+.main .main-intro .intro-mask .divider-container { -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; padding: 20px 0; }
+.main .main-intro .intro-mask .divider-container .divider-horizental { width: 20%; transition: all .75s ease-in; }
+.main .main-intro .intro-mask:hover .divider-container .divider-horizental { width: 50%; transition: all .75s ease-in; }
+.main .main-intro .intro-mask .intro-description { font-family: "宋体"; color: #FFF; margin-bottom: 35px; height: 78px; line-height: 26px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.main .main-intro .intro-mask .intro-more { display: inline-block; padding: 15px 2vw; color: #000; background-color: #FFF; border-radius: 24px; }
+.main .main-intro .news-title, .main .main-intro .news-date { font-family: "宋体"; color: #333; line-height: 36px; margin-bottom: 10px; }
+.main .main-intro .get-details { display: inline-block; padding: 10px 0; color: #333; font-family: "宋体"; border-bottom: 1px solid #924a49; }
 
-
-@media screen and (max-width: 1260px) and (min-width: 910px) {
-
-
+/*景区活动*/
+.activity { width: 100vw; height: 530px; margin-bottom: 80px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.activity .activity-content { width: 73vw; height: 100%; padding: 40px 0; margin: 0 auto; box-sizing: border-box; display: -ms-flexbox; display: flex; }
+.activity .activity-content .activity-intro { position: relative; width: 31%; margin-right: 3%; background-color: #FFF; padding: 30px; overflow: hidden; }
+.activity .activity-content .activity-intro .activity-name { font-family: "宋体"; color: #333; margin-bottom: 20px; }
+.activity .activity-content .activity-intro .activity-img { height: 110px; overflow: hidden; margin-bottom: 20px; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.activity .activity-content .activity-intro .intro-content { font-family: "宋体"; color: #333; overflow: hidden; line-height: 26px; }
+.activity .activity-content .activity-details { width: 66%; }
+.activity .activity-content .activity-details .details-title { color: #FFF; margin-bottom: 30px; text-align: right; margin-bottom: 40px; }
+.activity .activity-content .activity-details .show-date { height: 210px; display: -ms-flexbox; display: flex; -ms-flex-direction: row-reverse; flex-direction: row-reverse; margin-bottom: 40px; }
+.activity .activity-content .show-date .show-time { height: 100%; width: 180px; color: #FFF; text-align: center; margin-left: 1vw; }
+.activity .activity-content .show-date .show-time span:first-child { display: block; border: 2px solid #FFF; font-family: "microsoft yahei"; border-radius: 6px; padding: 10px 0; box-sizing: border-box; }
+.activity .activity-content .show-date .show-time span:last-child { display: block; border: 2px solid #FFF; border-radius: 6px; padding: 10px 0 20px; box-sizing: border-box; }
+.activity .activity-content .activity-details .details-more { color: #FFF; font-family: "microsoft yahei"; text-align: right; }
+.activity .activity-content .activity-details .details-more a { display: inline-block; color: #FFF; font-family: "microsoft yahei"; margin-left: 1.5vw; }
+.activity .activity-content .activity-details .details-more i { display: inline-block; animation: enter 1.5s ease-in-out infinite; transform-origin: 50% 50%; }
+@keyframes enter {
+	50% { transform: translateX(-0.5em); }
 }
 
+/*旅游服务*/
+.service-list { width: 73vw; margin: 0 auto; -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 75px; text-align: center; }
+.service-list .service .tld-icon { color: #637181; }
+.service-list .service .service-name { color: #637181; }
+.service-list .service .divider-group { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; padding: 10px 0; }
+.service-list .service .divider-horizental { background-color: #637181; width: 45%; }
+.service-list .service .service-english { font-family: "Arial"; color: #ad9778; }
 
-@media screen and (max-width: 909px) {
-	.navigation .menu-list {
-		font-size: 14px;
-	}
-	.navigation .menu-list .menu {
-		margin: 0 1vw;
-	}
+/*游览线路*/
+.tour-route { width: 73vw; margin: 0 auto; padding: 50px 2.5vw; background-color: #ad9778; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; box-sizing: border-box; color: #FFF; margin-bottom: 80px; }
+.tour-route .route { padding: 0 3vw; border-right: 1px dotted #FFF; }
+.tour-route .route:first-child { padding-left: 0; }
+.tour-route .route:last-child { padding-right: 0; border: none; }
+.tour-route .route .route-name { display: -ms-flexbox; display: flex; }
+.tour-route .route .route-name .initial-name { margin-right: 15px; }
+.tour-route .route .route-name .name { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: start; align-items: flex-start; -ms-flex-pack: center; justify-content: center; text-align: left; }
+.tour-route .route .route-details { font-family: "microsoft yahei"; line-height: 24px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
 
+/*尾部*/
+.footer { background-color: #272b2f; height: 410px; }
+.footer .footer-content { width: 73vw; margin: 0 auto; padding: 50px 0; -ms-flex-pack: center; justify-content: center; }
+.footer .footer-content>div { border-right: 1px dotted #999; padding: 0 40px; }
+.footer .footer-content>div:last-child { border: none; padding-right: 0; }
+.footer .content-1 .footer-logo { height: 60px; }
+.footer .content-1 .concat-list .left { margin-right: 1vw; }
+.footer .content-1 .concat-list .left i { color: #ef8c17; }
+.footer .content-1 .concat-list .right .concat-1 { color: #ef8c17; }
+.footer .content-1 .concat-link { padding: 15px 0; margin-top: 20px; -ms-flex-pack: distribute; justify-content: space-around; }
+.footer .content-1 .concat-link i { border: 1px solid #3d4246; padding: 5px 15px; }
+.footer .content-2 { text-align: center; }
+.footer .content-2 img { width: 100px; margin: 15px 0; }
+.footer .content-3 { -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: start; justify-content: flex-start; }
+.footer .content-3 p { text-align: center; margin: 10px 0; }
+.footer .content-3 p a { transition: all .35s ease-in-out; }
+.footer .content-3 p:hover a { color: #FFF; transition: all .35s ease-in-out; }
+.footer .content-3 p:first-child { color: #FFF; }
+.footer .content-4 { -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: start; justify-content: flex-start; }
+.footer .content-4 p { text-align: center; margin: 10px 0; padding: 5px 15px; background-color: #3f454b; border-radius: 20px; }
+.footer .content-4 p:hover { color: #FFF; transition: all .35s ease-in-out; }
+.footer .content-4 p:first-child { padding: 0; color: #FFF; background-color: transparent; }
+.footer .content-4 p a { color: #FFF; }
 
+/*版权声明*/
+.copyright { background-color: #000; text-align: center; padding: 20px 0; font-family: "宋体"; color: #888; }
+
+@media screen and (max-width:1260px) and (min-width:910px) {
+	.main { width: 100vw; padding: 60px 1vw; box-sizing: border-box; }
+	.activity .activity-content { width: 98vw; padding: 0 1vw; }
+	.service-list { width: 98vw; padding: 0 1vw; }
+	.tour-route { width: 98vw; padding: 0 1vw; }
+	.footer .footer-content { width: 98vw; padding: 0 1vw; }
 }
-
-
+@media screen and (max-width:909px) {
+	.navigation .menu-list { font-size: 14px; }
+	.navigation .menu-list .menu { margin: 0 1vw; }
+	.main { width: 100vw; padding: 60px 1vw; box-sizing: border-box; }
+	.activity .activity-content { width: 98vw; padding: 0 1vw; }
+	.service-list { width: 98vw; padding: 0 1vw; }
+	.tour-route { width: 98vw; padding: 0 1vw; }
+	.footer .footer-content { width: 98vw; padding: 0 1vw; }
+}
 /*css main*/

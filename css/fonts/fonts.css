@@ -14,3 +14,19 @@
 	url('Baskerville_Old_Face.ttf')  format('truetype'), /* Safari, Android, iOS */              
 	url('Baskerville_Old_Face.svg#Baskerville_Old_Face') format('svg'); /* Legacy iOS */
 }
+@font-face {
+	font-family: 'MFYanSong-Regular';
+	src: url('MFYanSong-Regular.eot'); /* IE9 Compat Modes */
+	src: url('MFYanSong-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+	url('MFYanSong-Regular.woff') format('woff'), /* Modern Browsers */
+	url('MFYanSong-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */              
+	url('MFYanSong-Regular.svg#MFYanSong-Regular') format('svg'); /* Legacy iOS */
+}
+@font-face {
+	font-family: 'BaronNeue';
+	src: url('BaronNeue.eot'); /* IE9 Compat Modes */
+	src: url('BaronNeue.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+	url('BaronNeue.woff') format('woff'), /* Modern Browsers */
+	url('BaronNeue.ttf')  format('truetype'), /* Safari, Android, iOS */              
+	url('BaronNeue.svg#BaronNeue') format('svg'); /* Legacy iOS */
+}
