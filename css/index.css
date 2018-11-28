@@ -1,279 +1,81 @@
-/*css reset*/
-html { margin: 0; overflow: auto; }
-body, dl, dt, dd, ul, ol, li, pre, form, fieldset, input, p, blockquote, th, td { font-weight: 400; margin: 0; padding: 0; }
-h1, h2, h3, h4, h4, h5 { margin: 0; padding: 0; }
-body { width: 100%; background-color: #FFFFFF; color: #666666; box-sizing: border-box; font-family: "microsoft yahei", Arial, sans-serif; font-size: 12px; text-align: left; }
-img { border: 0; vertical-align: top; }
-select { font-size: 12px; }
-table { border-collapse: collapse; }
-fieldset, img { border: 0 none; -webkit-user-drag: none; }
-fieldset { margin: 0; padding: 0; }
-fieldset p { margin: 0; padding: 0 0 0 8px; }
-legend { display: none; }
-address, caption, em, strong, th, i { font-style: normal; font-weight: 400; }
-table caption { margin-left: -1px; }
-hr { border-bottom: 1px solid #FFFFFF; border-top: 1px solid #E4E4E4; border-width: 1px 0; clear: both; height: 2px; margin: 5px 0; overflow: hidden; }
-ol, ul { list-style-image: none; list-style-position: outside; list-style-type: none; }
-caption, th { text-align: left; }
-q:before, q:after, blockquote:before, blockquote:after { content: ""; }
-a, a:hover, a:active, a:focus, a:visited { text-decoration: none; color: #666666; -webkit-user-drag: none; }
-button { border: none; background: transparent; outline: none; cursor: pointer; color: #FFF }
-/*css reset*/
-
-/*css preset*/
-.fs-12 { font-size: 12px; }
-.fs-14 { font-size: 14px; }
-.fs-16 { font-size: 16px; }
-.fs-18 { font-size: 18px; }
-.fs-20 { font-size: 20px; }
-.fs-24 { font-size: 24px; }
-.fs-28 { font-size: 28px; }
-.fs-30 { font-size: 30px; }
-.fs-32 { font-size: 32px; }
-.fs-40 { font-size: 40px; }
-.fs-60 { font-size: 60px; }
-.fs-70 { font-size: 70px; }
-.fs-72 { font-size: 72px; }
-.fw-600 { font-weight: 600; }
-.f-FZLTHJW { font-family: "FZLTHJW"; }
-.f-Baskerville { font-family: "Baskerville_Old_Face"; }
-.f-MFYanSong-Regular { font-family: "MFYanSong-Regular"; }
-.f-BaronNeue { font-family: "BaronNeue"; }
-.h-22 { height: 22px; }
-.d-i { display: line; }
-.d-b { display: block; }
-.d-ib { display: inline-block; }
-.d-f { display: -ms-flexbox; display: flex  }
-.transition { transition: all .15s ease-in-out; }
-.transition:active, .transition:focus, .transition:hover, .transition:visited { transition: all .15s ease-in-out; }
-.click-animation { transform: scale(1); }
-.click-animation:active { transform: scale(.9); }
-.w-100vw { width: 100vw }
-.w-22 { width: 22px; }
-/*css preset*/
-
-/*css main*/
-html, body { height: 100vh; width: 100vw; }
-body { overflow: auto; position: relative; }
-/*天气图标样式*/
-.weather svg { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
-.divider-vertical { display: inline-block; width: 1px; background-color: #EEE; }
-.divider-horizental { display: inline-block; height: 1px; background-color: #EEE; }
-/*图片懒加载*/
-.lazy-load-img { display: block; position: relative; z-index: 9; background: radial-gradient(#eeeeee, #cccccc); }
-.lazy-load-img img { height: 100%; }
-.lazy-load-base { height: 9em; left: 50%; margin: -7.5em; padding: 3em; position: absolute; top: 50%; width: 9em; transform: rotateX(45deg) rotateZ(45deg); transform-style: preserve-3d; }
-.lazy-load-cube, .lazy-load-cube:after, .lazy-load-cube:before { content: ''; float: left; height: 3em; position: absolute; width: 3em; }
-.lazy-load-cube { background-color: #05afd1; position: relative; transform: translateZ(3em); transform-style: preserve-3d; transition: .25s; box-shadow: 13em 13em 1.5em rgba(0, 0, 0, 0.1); animation: anim 1s infinite; }
-.lazy-load-cube:after { background-color: #049dbc; transform: rotateX(-90deg) translateY(3em); transform-origin: 100% 100%; }
-.lazy-load-cube:before { background-color: #048ca7; transform: rotateY(90deg) translateX(3em); transform-origin: 100% 0; }
-.lazy-load-cube:nth-child(1) { animation-delay: 0.05s; }
-.lazy-load-cube:nth-child(2) { animation-delay: 0.1s; }
-.lazy-load-cube:nth-child(3) { animation-delay: 0.15s; }
-.lazy-load-cube:nth-child(4) { animation-delay: 0.2s; }
-.lazy-load-cube:nth-child(5) { animation-delay: 0.25s; }
-.lazy-load-cube:nth-child(6) { animation-delay: 0.3s; }
-.lazy-load-cube:nth-child(7) { animation-delay: 0.35s; }
-.lazy-load-cube:nth-child(8) { animation-delay: 0.4s; }
-.lazy-load-cube:nth-child(9) { animation-delay: 0.45s; }
-@keyframes anim {
-	50% { transform: translateZ(0.5em); }
-}
-
-/*头部样式*/
-.header { height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between;	/*overflow: hidden;*/ position: relative; z-index: 50 }
-.header div { line-height: 60px; }
-.header .weather .temperature { padding-right: 1vw; box-sizing: border-box; }
-.header .sns>span { display: inline-block; box-sizing: border-box; position: relative; }
-.header .sns>span span { display: block; position: absolute; top: 55px; left: -50px; margin-left: 50%; background-color: #FFF; box-shadow: 2px 2px 4px #637181; transform: scale(0); }
-.header .sns>span span:before { content: ""; border: 10px solid transparent; border-bottom-color: #637181; position: absolute; left: 50px; margin-left: -10px; top: -20px; }
-.header .sns>span span img { width: 100px; height: 100px; }
-.header .sns>span:hover span { transform: scale(1); }
-.header .sns i { padding: 0 1vw; cursor: pointer; color: #637181; }
-.header .greeting .greeting-content { padding-left: 1.5vw; color: #637181; }
-.header .get-more { -ms-flex-align: center; align-items: center; }
-.header .get-more .concact i { color: #914A49; cursor: pointer; }
-.header .get-more .phone-number { padding: 0 1vw; #637181; }
-.header .select-lang { -ms-flex-align: center; align-items: center; }
-.header .select-lang .select-language { padding: 0 1vw; }
-.header .search .search-icon { padding: 0 1vw; cursor: pointer; }
-.header .booking { padding-left: 1vw; }
-.header .booking button { background-color: #914A49; padding: 8px 12px; box-shadow: 1px 1px 4px #666;  }
-.header .booking button:active { box-shadow: 1px 1px 2px #666; transform: translate(1px, 1px) scale(.9); }
-
-/*菜单样式*/
-.navigation { height: 60px; padding: 0 2vw; box-sizing: border-box; background-color: #FFF; -ms-flex-pack: justify; justify-content: space-between; box-shadow: 0 2px 4px #666; position: relative; z-index: 49 }
-.navigation div { line-height: 60px; }
-.navigation .logo { width: 140px; background: url(../imgs/logo_01.jpg) center no-repeat; background-size: contain; cursor: pointer; }
-.navigation .menu-list .menu { margin: 0 2vw; font-family: "宋体"; font-weight: 600; position: relative; }
-.navigation .menu-list .menu a { color: #000; }
-.navigation .menu-list .menu.active a { color: #b63b4d; }
-.navigation .menu-list .menu .menu-center { opacity: 0; height: 0; z-index: -1; overflow: hidden; position: absolute; left: 50%; margin-left: -75%; width: 150%; border-radius: 0 0 4px 4px; box-shadow: 1px 4px 4px #333; }
-.navigation .menu-list .menu .submenu { width: 100%; font-weight: 500; text-align: center; background: white; color: #666666; cursor: pointer; }
-.navigation .menu-list .menu .submenu:hover { background: #444359; color: white; }
-.navigation .menu-list .menu .submenu:hover a { background: #444359; color: white; }
-.navigation .menu-list .menu:hover .menu-center { height: auto; opacity: 1; }
-
-/*轮播图*/
-.slider { overflow: hidden; }
-.shutter { overflow: hidden; position: relative; }
-.shutter-img { z-index: 1; }
-.shutter-img, .shutter-img a { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
-.shutter-img a { cursor: default; }
-.shutter-img a > img { width: 100%; height: 100%; }
-.shutter-img .created { overflow: hidden; position: absolute; z-index: 20; }
-.shutter-img a:not(.active) div { opacity: 0; }
-.shutter-img .created div { display: none; }
-.shutter-btn li { position: absolute; z-index: 2; top: 50%; margin-top: -45px; cursor: pointer; }
-.shutter-btn li.prev { left: 20px; color: #FFF; }
-.shutter-btn li.next { right: 20px; color: #FFF; }
-.shutter-btn li.prev:hover, .shutter-btn li.next:hover { color: #EEE; transform: scale(.95); transform-origin: 50%; }
-
-/*右侧滚动条*/
-.mCustomScrollbar .mCSB_container { margin: 0; }
-.mCustomScrollbar .mCSB_scrollTools { z-index: 999; }
-
-/*景点展览*/
-.scenic-list { height: 280px; margin-top: 1px; -ms-flex-pack: justify; justify-content: space-between; }
-.scenic-list .scenic-container { height: 100%; width: 25vw; overflow: hidden; margin: 0 1px; position: relative; }
-.scenic-list .scenic-container img { position: absolute; z-index: 20; top: 0; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out; }
-.scenic-list .scenic-container:hover img { transition: all .5s ease-in-out; transform: scale(1.05); }
-.scenic-list .scenic-container .scenic-mask { position: absolute; height: 100%; z-index: 30; left: 0; top: -280px; color: #FFF; background-color: transparent; transition: all .5s ease-in-out; padding: 0 30px; }
-.scenic-list .scenic-container:hover .scenic-mask { background-color: rgba(0, 0, 0, .75); top: 0; transition: all .25s ease-in-out; }
-.scenic-list .scenic-mask .scenic-icon { margin-top: 45px; }
-.scenic-list .scenic-mask .scenic-name { margin-top: 10px; }
-.scenic-list .scenic-mask .divider-container { -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; padding: 10px 0; }
-.scenic-list .scenic-mask .divider-container .divider-horizental { width: 60%; }
-.scenic-list .scenic-mask p { text-align: center; }
-.scenic-list .scenic-mask .scenic-description { padding-top: 20px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
-
-/*主篇*/
-.main { width: 73vw; margin: 0 auto; padding: 60px 0; }
-.main .main-title { font-family: "宋体"; color: #333333; font-weight: 600; text-align: center; }
-.main .main-subtitle { color: #637181; text-align: center; margin: 10px 0 60px; }
-.main .main-banner { height: 300px; background-position: center; background-repeat: no-repeat; background-size: cover; margin-bottom: 50px; }
-.main .main-intro { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; }
-.main .main-intro>div { margin-right: 2vw; }
-.main .main-intro>div:last-child { margin-right: 0; }
-.main .main-intro .intro-title { font-family: "宋体"; color: #333; margin-bottom: 10px; }
-.main .main-intro .intro-title i { margin-right: .5vw; color: #924a49; }
-.main .main-intro .intro-content { color: #637181; line-height: 32px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; margin-bottom: 60px; }
-.main .main-intro .main-guide { height: 600px; overflow: hidden; position: relative; margin-bottom: 60px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-user-drag: none; }
-.main .main-intro .main-guide img { position: absolute; z-index: 20; top: 0; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out; }
-.main .main-intro .main-guide:hover img { transition: all .5s ease-in-out; transform: scale(1.05); }
-.main .main-intro .main-guide .intro-mask { position: absolute; height: 100%; z-index: 30; left: 0; top: 0; color: #FFF; background-color: rgba(0, 0, 0, .6); transition: all .5s ease-in-out; padding: 0 30px; text-align: center; }
-.main .main-intro .intro-mask p { text-align: center; }
+.slider { overflow: hidden }
+.shutter { overflow: hidden; position: relative }
+.shutter-img { z-index: 1 }
+.shutter-img, .shutter-img a { position: absolute; left: 0; top: 0; width: 100%; height: 100% }
+.shutter-img a { cursor: default }
+.shutter-img a > img { width: 100%; height: 100% }
+.shutter-img .created { overflow: hidden; position: absolute; z-index: 20 }
+.shutter-img a:not(.active) div { opacity: 0 }
+.shutter-img .created div { display: none }
+.shutter-btn li { position: absolute; z-index: 2; top: 50%; margin-top: -45px; cursor: pointer }
+.shutter-btn li.prev { left: 20px; color: #FFF }
+.shutter-btn li.next { right: 20px; color: #FFF }
+.shutter-btn li.prev:hover, .shutter-btn li.next:hover { color: #EEE; transform: scale(.95); transform-origin: 50% }
+.scenic-list { height: 280px; margin-top: 1px; -ms-flex-pack: justify; justify-content: space-between }
+.scenic-list .scenic-container { height: 100%; width: 25vw; overflow: hidden; margin: 0 1px; position: relative }
+.scenic-list .scenic-container img { position: absolute; z-index: 20; top: 0; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out }
+.scenic-list .scenic-container:hover img { transition: all .5s ease-in-out; transform: scale(1.05) }
+.scenic-list .scenic-container .scenic-mask { position: absolute; height: 100%; z-index: 30; left: 0; top: -280px; color: #FFF; background-color: transparent; transition: all .5s ease-in-out; padding: 0 30px }
+.scenic-list .scenic-container:hover .scenic-mask { background-color: rgba(0, 0, 0, .75); top: 0; transition: all .25s ease-in-out }
+.scenic-list .scenic-mask .scenic-icon { margin-top: 45px }
+.scenic-list .scenic-mask .scenic-name { margin-top: 10px }
+.scenic-list .scenic-mask .divider-container { -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; padding: 10px 0 }
+.scenic-list .scenic-mask .divider-container .divider-horizental { width: 60% }
+.scenic-list .scenic-mask p { text-align: center }
+.scenic-list .scenic-mask .scenic-description { padding-top: 20px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical }
+.main { width: 73vw; margin: 0 auto; padding: 60px 0 }
+.main .main-title { font-family: "宋体"; color: #333333; font-weight: 600; text-align: center }
+.main .main-subtitle { color: #637181; text-align: center; margin: 10px 0 60px }
+.main .main-banner { height: 300px; background-position: center; background-repeat: no-repeat; background-size: cover; margin-bottom: 50px }
+.main .main-intro { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around }
+.main .main-intro>div { margin-right: 2vw }
+.main .main-intro>div:last-child { margin-right: 0 }
+.main .main-intro .intro-title { font-family: "宋体"; color: #333; margin-bottom: 10px }
+.main .main-intro .intro-title i { margin-right: .5vw; color: #924a49 }
+.main .main-intro .intro-content { color: #637181; line-height: 32px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; margin-bottom: 60px }
+.main .main-intro .main-guide { height: 600px; overflow: hidden; position: relative; margin-bottom: 60px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-user-drag: none }
+.main .main-intro .main-guide img { position: absolute; z-index: 20; top: 0; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out }
+.main .main-intro .main-guide:hover img { transition: all .5s ease-in-out; transform: scale(1.05) }
+.main .main-intro .main-guide .intro-mask { position: absolute; height: 100%; z-index: 30; left: 0; top: 0; color: #FFF; background-color: rgba(0, 0, 0, .6); transition: all .5s ease-in-out; padding: 0 30px; text-align: center }
+.main .main-intro .intro-mask p { text-align: center }
 .main .main-intro .intro-mask .intro-icon { margin: 140px 0 10px }
-.main .main-intro .intro-mask .intro-name { font-family: "宋体"; color: #FFF; margin-bottom: 10px; }
-.main .main-intro .intro-mask .divider-container { -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; padding: 20px 0; }
-.main .main-intro .intro-mask .divider-container .divider-horizental { width: 20%; transition: all .75s ease-in; }
-.main .main-intro .intro-mask:hover .divider-container .divider-horizental { width: 50%; transition: all .75s ease-in; }
-.main .main-intro .intro-mask .intro-description { font-family: "宋体"; color: #FFF; margin-bottom: 35px; height: 78px; line-height: 26px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
-.main .main-intro .intro-mask .intro-more { display: inline-block; padding: 15px 2vw; color: #000; background-color: #FFF; border-radius: 24px; }
-.main .main-intro .news-title, .main .main-intro .news-date { font-family: "宋体"; color: #333; line-height: 36px; margin-bottom: 10px; }
-.main .main-intro .get-details { display: inline-block; padding: 10px 0; color: #333; font-family: "宋体"; border-bottom: 1px solid #924a49; }
-
-/*景区活动*/
-.activity { width: 100vw; height: 530px; margin-bottom: 80px; background-position: center; background-size: cover; background-repeat: no-repeat; }
-.activity .activity-content { width: 73vw; height: 100%; padding: 40px 0; margin: 0 auto; box-sizing: border-box; display: -ms-flexbox; display: flex; }
-.activity .activity-content .activity-intro { position: relative; width: 31%; margin-right: 3%; background-color: #FFF; padding: 30px; overflow: hidden; }
-.activity .activity-content .activity-intro .activity-name { font-family: "宋体"; color: #333; margin-bottom: 20px; }
-.activity .activity-content .activity-intro .activity-img { height: 110px; overflow: hidden; margin-bottom: 20px; background-position: center; background-size: cover; background-repeat: no-repeat; }
-.activity .activity-content .activity-intro .intro-content { font-family: "宋体"; color: #333; overflow: hidden; line-height: 26px; }
-.activity .activity-content .activity-details { width: 66%; }
-.activity .activity-content .activity-details .details-title { color: #FFF; margin-bottom: 30px; text-align: right; margin-bottom: 40px; }
-.activity .activity-content .activity-details .show-date { height: 210px; display: -ms-flexbox; display: flex; -ms-flex-direction: row-reverse; flex-direction: row-reverse; margin-bottom: 40px; }
-.activity .activity-content .show-date .show-time { height: 100%; width: 180px; color: #FFF; text-align: center; margin-left: 1vw; }
-.activity .activity-content .show-date .show-time span:first-child { display: block; border: 2px solid #FFF; font-family: "microsoft yahei"; border-radius: 6px; padding: 10px 0; box-sizing: border-box; }
-.activity .activity-content .show-date .show-time span:last-child { display: block; border: 2px solid #FFF; border-radius: 6px; padding: 10px 0 20px; box-sizing: border-box; }
-.activity .activity-content .activity-details .details-more { color: #FFF; font-family: "microsoft yahei"; text-align: right; }
-.activity .activity-content .activity-details .details-more a { display: inline-block; color: #FFF; font-family: "microsoft yahei"; margin-left: 1.5vw; }
-.activity .activity-content .activity-details .details-more i { display: inline-block; animation: enter 1.5s ease-in-out infinite; transform-origin: 50% 50%; }
+.main .main-intro .intro-mask .intro-name { font-family: "宋体"; color: #FFF; margin-bottom: 10px }
+.main .main-intro .intro-mask .divider-container { -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; padding: 20px 0 }
+.main .main-intro .intro-mask .divider-container .divider-horizental { width: 20%; transition: all .75s ease-in }
+.main .main-intro .intro-mask:hover .divider-container .divider-horizental { width: 50%; transition: all .75s ease-in }
+.main .main-intro .intro-mask .intro-description { font-family: "宋体"; color: #FFF; margin-bottom: 35px; height: 78px; line-height: 26px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical }
+.main .main-intro .intro-mask .intro-more { display: inline-block; padding: 15px 2vw; color: #000; background-color: #FFF; border-radius: 24px }
+.main .main-intro .news-title, .main .main-intro .news-date { font-family: "宋体"; color: #333; line-height: 36px; margin-bottom: 10px }
+.main .main-intro .get-details { display: inline-block; padding: 10px 0; color: #333; font-family: "宋体"; border-bottom: 1px solid #924a49 }
+.activity { width: 100vw; height: 530px; margin-bottom: 80px; background-position: center; background-size: cover; background-repeat: no-repeat }
+.activity .activity-content { width: 73vw; height: 100%; padding: 40px 0; margin: 0 auto; box-sizing: border-box; display: -ms-flexbox; display: flex }
+.activity .activity-content .activity-intro { position: relative; width: 31%; margin-right: 3%; background-color: #FFF; padding: 30px; overflow: hidden }
+.activity .activity-content .activity-intro .activity-name { font-family: "宋体"; color: #333; margin-bottom: 20px }
+.activity .activity-content .activity-intro .activity-img { height: 110px; overflow: hidden; margin-bottom: 20px; background-position: center; background-size: cover; background-repeat: no-repeat }
+.activity .activity-content .activity-intro .intro-content { font-family: "宋体"; color: #333; overflow: hidden; line-height: 26px }
+.activity .activity-content .activity-details { width: 66% }
+.activity .activity-content .activity-details .details-title { color: #FFF; margin-bottom: 30px; text-align: right; margin-bottom: 40px }
+.activity .activity-content .activity-details .show-date { height: 210px; display: -ms-flexbox; display: flex; -ms-flex-direction: row-reverse; flex-direction: row-reverse; margin-bottom: 40px }
+.activity .activity-content .show-date .show-time { height: 100%; width: 180px; color: #FFF; text-align: center; margin-left: 1vw }
+.activity .activity-content .show-date .show-time span:first-child { display: block; border: 2px solid #FFF; font-family: "microsoft yahei"; border-radius: 6px; padding: 10px 0; box-sizing: border-box }
+.activity .activity-content .show-date .show-time span:last-child { display: block; border: 2px solid #FFF; border-radius: 6px; padding: 10px 0 20px; box-sizing: border-box }
+.activity .activity-content .activity-details .details-more { color: #FFF; font-family: "microsoft yahei"; text-align: right }
+.activity .activity-content .activity-details .details-more a { display: inline-block; color: #FFF; font-family: "microsoft yahei"; margin-left: 1.5vw }
+.activity .activity-content .activity-details .details-more i { display: inline-block; animation: enter 1.5s ease-in-out infinite; transform-origin: 50% 50% }
 @keyframes enter {
-	50% { transform: translateX(-0.5em); }
+	50% { transform: translateX(-0.5em) }
 }
-
-/*旅游服务*/
-.service-list { width: 73vw; margin: 0 auto; -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 75px; text-align: center; }
-.service-list .service .tld-icon { color: #637181; }
-.service-list .service .service-name { color: #637181; }
-.service-list .service .divider-group { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; padding: 10px 0; }
-.service-list .service .divider-horizental { background-color: #637181; width: 45%; }
-.service-list .service .service-english { font-family: "Arial"; color: #ad9778; }
-
-/*游览线路*/
-.tour-route { width: 73vw; margin: 0 auto; padding: 50px 2.5vw; background-color: #ad9778; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; box-sizing: border-box; color: #FFF; margin-bottom: 80px; }
-.tour-route .route { padding: 0 3vw; border-right: 1px dotted #FFF; }
-.tour-route .route:first-child { padding-left: 0; }
-.tour-route .route:last-child { padding-right: 0; border: none; }
-.tour-route .route .route-name { display: -ms-flexbox; display: flex; }
-.tour-route .route .route-name .initial-name { margin-right: 15px; }
-.tour-route .route .route-name .name { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: start; align-items: flex-start; -ms-flex-pack: center; justify-content: center; text-align: left; }
-.tour-route .route .route-details { font-family: "microsoft yahei"; line-height: 24px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
-
-/*尾部*/
-.footer { background-color: #272b2f; height: 410px; }
-.footer .footer-content { width: 73vw; min-width: 760px; margin: 0 auto; padding: 50px 0; -ms-flex-pack: center; justify-content: center; }
-.footer .footer-content>div { border-right: 1px dotted #999; padding: 0 2vw; }
-.footer .footer-content>div:last-child { border: none; padding-right: 0; }
-.footer .content-1 .footer-logo { height: 60px; }
-.footer .content-1 .concat-list .left { margin-right: 1vw; }
-.footer .content-1 .concat-list .left i { color: #ef8c17; }
-.footer .content-1 .concat-list .right .concat-1 { color: #ef8c17; }
-.footer .content-1 .concat-link { padding: 15px 0; margin-top: 20px; -ms-flex-pack: distribute; justify-content: space-around; }
-.footer .content-1 .concat-link i { border: 1px solid #3d4246; padding: 5px 15px; }
-.footer .content-2 { text-align: center; }
-.footer .content-2 img {
-	width: 100px;
-	margin: 15px 0;
-	cursor: pointer;
-	transition: all .35s ease-in-out;
-}
-.footer .content-2 img:hover {
-	transform: scale(1.1);
-	transition: all .35s ease-in-out;
-}
-.footer .content-3 { -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: start; justify-content: flex-start; }
-.footer .content-3 p { text-align: center; margin: 10px 0; }
-.footer .content-3 p a { transition: all .35s ease-in-out; }
-.footer .content-3 p:hover a { color: #FFF; transition: all .35s ease-in-out; }
-.footer .content-3 p:first-child { color: #FFF; }
-.footer .content-4 { -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: start; justify-content: flex-start; }
-.footer .content-4 p { text-align: center; margin: 10px 0; padding: 5px 15px; background-color: #3f454b; border-radius: 20px; }
-.footer .content-4 p:hover { color: #FFF; transition: all .35s ease-in-out; }
-.footer .content-4 p:first-child { padding: 0; color: #FFF; background-color: transparent; }
-.footer .content-4 p a { color: #FFF; }
-
-/*侧边栏*/
-.sidebar { position: fixed; right: 10px; bottom: 100px; z-index: 999; text-shadow: 2px 2px 10px; }
-.sidebar >div { height: 3vw; width: 3vw; background-color: #FFF; margin-bottom: 2px; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; border-radius: 4px; }
-.sidebar >div i { font-size: 2vw; }
-.sidebar >div:nth-child(1) a { color: #fd7c77; }
-.sidebar >div:nth-child(2) a { color: #ef8c17; }
-.sidebar >div:nth-child(3) a { color: #0185cf; }
-.sidebar >div:nth-child(4) a { color: #37b564; }
-
-/*版权声明*/
-.copyright { background-color: #000; text-align: center; padding: 20px 0; font-family: "宋体"; color: #888; }
-
-@media screen and (max-width:1260px) and (min-width:910px) {
-	.main { width: 100vw; padding: 60px 1vw; box-sizing: border-box; }
-	.activity .activity-content { width: 98vw; padding: 40px 1vw; }
-	.service-list { width: 98vw; padding: 0 1vw; }
-	.tour-route { width: 98vw; padding: 50px 2vw; }
-	.footer .footer-content { width: 98vw; padding: 50px 1vw; }
-	.sidebar >div { height: 4vw; width: 4vw; }
-	.sidebar >div i { font-size: 3vw; }
-}
-@media screen and (max-width:909px) {
-	.navigation .menu-list { font-size: 14px; }
-	.navigation .menu-list .menu { margin: 0 1vw; }
-	.main { width: 100vw; padding: 60px 1vw; box-sizing: border-box; }
-	.activity .activity-content { width: 98vw; padding: 40px 1vw; }
-	.service-list { width: 98vw; padding: 0 1vw; }
-	.tour-route { width: 98vw; padding: 50px 2vw; }
-	.footer .footer-content { width: 98vw; padding: 50px 1vw; }
-	.sidebar >div { height: 5vw; width: 5vw; }
-	.sidebar >div i { font-size: 4vw; }
-}
-/*css main*/
+.service-list { width: 73vw; margin: 0 auto; -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 75px; text-align: center }
+.service-list .service .tld-icon { color: #637181 }
+.service-list .service .service-name { color: #637181 }
+.service-list .service .divider-group { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; padding: 10px 0 }
+.service-list .service .divider-horizental { background-color: #637181; width: 45% }
+.service-list .service .service-english { font-family: "Arial"; color: #ad9778 }
+.tour-route { width: 73vw; margin: 0 auto; padding: 50px 2.5vw; background-color: #ad9778; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; box-sizing: border-box; color: #FFF; margin-bottom: 80px }
+.tour-route .route { padding: 0 3vw; border-right: 1px dotted #FFF }
+.tour-route .route:first-child { padding-left: 0 }
+.tour-route .route:last-child { padding-right: 0; border: none }
+.tour-route .route .route-name { display: -ms-flexbox; display: flex }
+.tour-route .route .route-name .initial-name { margin-right: 15px }
+.tour-route .route .route-name .name { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: start; align-items: flex-start; -ms-flex-pack: center; justify-content: center; text-align: left }
+.tour-route .route .route-details { font-family: "microsoft yahei"; line-height: 24px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical }

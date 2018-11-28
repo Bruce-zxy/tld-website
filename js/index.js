@@ -65,35 +65,13 @@ function onWindowResizing(e) {
 		toSliceDomContent(Math.floor((windowWidth - (left_width + right_width + 80)) / font_size), dom_content)
 	}
 }
+function isDomExist($dom) {
+    return !!$dom.length;
+}
 
 $(function() {
 
-    $('.shutter').shutter({
-        shutterW: "100%", // 容器宽度
-        shutterH: 780, // 容器高度
-        isAutoPlay: true, // 是否自动播放
-        playInterval: 3000, // 自动播放时间
-        curDisplay: 1, // 当前显示页
-        fullPage: false // 是否全屏展示
-    });
-
-	$.ajax({
-	    type: 'get',
-	    url: 'http://api.k780.com/?app=weather.today&weaid=1122&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data',
-	    dataType: 'jsonp',
-	    jsonp: 'callback',
-	    jsonpCallback: 'data',
-	    success: function(data) {
-	    	let result = data.result;
-	        $('.weather .temperature').html(result.temperature_curr);
-	        $('.weather svg use').attr("xlink:href", "#weather-" + weather_icons[result.weather_iconid]);
-	    },
-	    error: function(data, err) {
-	        console.error("AJAX Get An Error: " + err.toUpperCase());
-	    }
-	});
-	
-	// Emmet syntax: div.lazy-load-img>img.placeholder-img[data-src=""], 同时去掉src属性
+	// Emmet语法:div.lazy-load-img>img.placeholder-img[data-src=""],同时去掉src属性
 	toLoadImgsLazily('body', function(img, i) {
 		$($(".lazy-load-img img")[i]).css("margin-left", -img.width/2);
 		$($(".lazy-load-img img")[i]).css("margin-top", -img.height/2);
@@ -102,16 +80,33 @@ $(function() {
 	// 限制greeting的字数，多余的用溢出省略符代替
     onWindowResizing();
     $(window).on("resize", onWindowResizing);
+
+    // 滚动条
     $("body").mCustomScrollbar({
-    	scrollInertia:600,
-    	autoDraggerLength:false, 
-    	autoHideScrollbar: true
+    	scrollInertia: 100,
+    	autoDraggerLength: false, 
+    	autoHideScrollbar: true, 
+    	scrollEasing: "easeOut"
     });
-    $(".activity .activity-intro").mCustomScrollbar({
-    	scrollInertia:600,
-    	autoDraggerLength:false, 
-    	autoHideScrollbar: true
-    });
+
+
+    // 天气
+	// $.ajax({
+	//     type: 'get',
+	//     url: 'http://api.k780.com/?app=weather.today&weaid=1122&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data',
+	//     dataType: 'jsonp',
+	//     jsonp: 'callback',
+	//     jsonpCallback: 'data',
+	//     success: function(data) {
+	//     	let result = data.result;
+	//         $('.weather .temperature').html(result.temperature_curr);
+	//         $('.weather svg use').attr("xlink:href", "#weather-" + weather_icons[result.weather_iconid]);
+	//     },
+	//     error: function(data, err) {
+	//         console.error("AJAX Get An Error: " + err.toUpperCase());
+	//     }
+	// });
+
 })
 
 

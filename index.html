@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_932805_buqq29myze.css" />
     <link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
 
 </head>
 <!------分------割------线------>
@@ -476,4 +477,27 @@
     <script type="text/javascript" src="./js/velocity.js"></script>
     <script type="text/javascript" src="./js/shutter.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript">
+        var slider = $('.shutter');
+        var activity_content = $(".activity .activity-intro");
+        // 轮播图
+        if (isDomExist(slider)) {
+            slider.shutter({
+                shutterW: "100%", // 容器宽度
+                shutterH: 780, // 容器高度
+                isAutoPlay: true, // 是否自动播放
+                playInterval: 3000, // 自动播放时间
+                curDisplay: 1, // 当前显示页
+                fullPage: false // 是否全屏展示
+            });
+        }
+        if (isDomExist(activity_content)) {
+            activity_content.mCustomScrollbar({
+                scrollInertia: 100,
+                autoDraggerLength: false, 
+                autoHideScrollbar: true, 
+                scrollEasing: "easeOut"
+            });
+        }
+    </script>
 </html>

@@ -1,0 +1,87 @@
+/*巨幅banner*/
+.huge-banner { width: 100vw; height: 400px; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; overflow: hidden; color: #FFF; text-shadow: 2px 2px #333; }
+.huge-banner .banner-title { margin: 30px; }
+.huge-banner .banner-description { line-height: 26px; }
+
+/*主体内容*/
+.main { width: 73vw; margin: 20px auto 80px; }
+.main >span.divider-horizental { width: 100%; margin: 20px 0 40px; }
+
+/*景区简介*/
+.main .tld-introdution { margin-bottom: 20px; }
+.main .tld-introdution p { color: #333; line-height: 26px; }
+.main .tld-introdution .left { width: 25%; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: distribute; justify-content: space-around; margin-right: 1vw; }
+.main .tld-introdution .left .title-underline { margin: 20px 0; }
+.main .tld-introdution .right { width: 75%; }
+
+/*景点列表*/
+.main .scenic-list { width: 73vw; height: 170px; -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 40px; }
+.main .scenic-list>div { margin-right: 1vw; position: relative; width: 25%; height: 100%; overflow: hidden; }
+.main .scenic-list>div:last-child { margin-right: 0; }
+.main .scenic-list .scenic-mask { position: absolute; background-color: rgba(0, 0, 0, .55); top: 0; transition: all .25s ease-in-out; }
+.main .scenic-list>div:hover .scenic-mask { top: -170px; }
+.main .scenic-list .scenic-mask >span { height: 170px; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
+.main .scenic-list .scenic-mask p { color: #FFF; text-align: center; padding: 0 1vw; margin-bottom: 10px; }
+
+/*资讯列表*/
+.intro-news { height: 80px; -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 40px; }
+.intro-news >span { -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; margin-right: 2px; padding: 5px 1vw; background-color: #97a1ad; width: 16.6%; overflow: hidden; text-align: center; }
+.intro-news >span:last-child { margin-right: 0; }
+.intro-news >span a { color: #FFF; }
+
+/*介绍的结构体*/
+.intro-constructor { color: #333; margin-bottom: 40px; }
+.intro-constructor .title-underline { margin: 20px 0; }
+.intro-constructor .intro-content { line-height: 26px; }
+
+/*人文历史*/
+.history { -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 40px; }
+.history .history-container { width: 73vw; margin: 0 auto; padding: 40px 0; box-sizing: border-box; }
+.history .history-container .left { margin-right: 40px; -ms-flex-align: center; align-items: center; }
+.history .history-container .left #slider-wrap { width: 360px; height: 220px; }
+.history .history-container .right { -ms-flex-align: center; align-items: center; overflow: hidden; }
+.history .history-container .right .intro-constructor { margin-bottom: 0; }
+
+/*轮播图*/
+#slider-wrap { width: 600px; height: 400px; position: relative; overflow: hidden }
+#slider-wrap ul#slider { width: 100%; height: 100%; position: absolute; top: 0; left: 0 }
+#slider-wrap ul#slider li { float: left; position: relative; width: 100%; height: 100%; }
+#slider-wrap ul#slider li>div { position: absolute; top: 20px; left: 35px }
+#slider-wrap ul#slider li>div h3 { font-size: 36px; text-transform: uppercase }
+#slider-wrap ul#slider li>div span { font-family: Neucha, Arial, sans serif; font-size: 21px }
+#slider-wrap ul#slider li i { text-align: center; line-height: 400px; display: block; width: 100%; font-size: 90px }
+.btns { position: absolute; width: 50px; height: 60px; top: 50%; margin-top: -25px; line-height: 57px; text-align: center; cursor: pointer; background: rgba(0, 0, 0, .1); z-index: 100; -webkit-user-select: none; -moz-user-select: none; -khtml-user-select: none; -ms-user-select: none; transition: all .1s ease }
+.btns:hover { background: rgba(0, 0, 0, .3) }
+#next { right: -50px; border-radius: 7px 0 0 7px; color: #FFF; }
+#previous { left: -50px; border-radius: 0 7px 7px 7px; color: #FFF; }
+#counter { top: 30px; right: 35px; width: auto; position: absolute }
+#slider-wrap.active #next { right: 0 }
+#slider-wrap.active #previous { left: 0 }
+#pagination-wrap { min-width: 20px; margin-top: 350px; margin-left: auto; margin-right: auto; height: 15px; position: relative; text-align: center }
+#pagination-wrap ul { width: 100% }
+#pagination-wrap ul li { margin: 0 4px; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #fff; opacity: .9; position: relative; top: 0 }
+#pagination-wrap ul li.active { width: 12px; height: 12px; top: 3px; opacity: 1; box-shadow: rgba(0, 0, 0, .1) 1px 1px 0 }
+#slider-wrap ul, #pagination-wrap ul li { transition: all .3s cubic-bezier(1, .01, .32, 1) }
+
+/*美食轮播图*/
+.rvc { width: 100%!important; position: relative; margin: auto; margin-top: 30px }
+.rvc .rvc-wrapper { margin: auto; overflow: hidden }
+.rvc .rvc-wrapper ul { overflow: hidden; position: relative }
+.rvc .rvc-wrapper ul li { float: left; overflow: hidden; }
+.rvc .rvc-wrapper ul li a { display: block; position: relative; width: 100%; height: auto; text-decoration: none }
+.rvc .rvc-wrapper ul li a .img-wrapper { height: 150px; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center }
+.rvc .rvc-wrapper ul li a h2 { margin-top: 10px; text-align: center }
+.rvc .rvc-wrapper ul li a p { position: absolute; bottom: 0; left: 0; height: 40px; width: 100%; line-height: 40px; font-size: 18px; text-align: center; color: #FFF; background-color: rgba(0, 0, 0, .6); }
+.rvc-prv, .rvc-next { position: absolute; height: 100%; top: 0; cursor: pointer; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center }
+.rvc-prv { left: -30px }
+.rvc-next { right: -30px }
+@media screen and (max-width:1260px) {
+	.rvc { width: 90%!important }
+}
+
+/*图片简介*/
+.intro-photos { height: 300px; -ms-flex-pack: distribute; justify-content: space-around; }
+.intro-photos .lazy-load-img { position: relative; overflow: hidden; width: 50%; margin-right: 20px; }
+.intro-photos .lazy-load-img:last-child { margin-right: 0; }
+.intro-photos .lazy-load-img img { position: absolute; z-index: 20; top: 0; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out; }
+
