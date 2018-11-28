@@ -77,21 +77,21 @@ $(function() {
         fullPage: false // 是否全屏展示
     });
 
-	// $.ajax({
-	//     type: 'get',
-	//     url: 'http://api.k780.com/?app=weather.today&weaid=1122&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data',
-	//     dataType: 'jsonp',
-	//     jsonp: 'callback',
-	//     jsonpCallback: 'data',
-	//     success: function(data) {
-	//     	let result = data.result;
-	//         $('.weather .temperature').html(result.temperature_curr);
-	//         $('.weather svg use').attr("xlink:href", "#weather-" + weather_icons[result.weather_iconid]);
-	//     },
-	//     error: function(data, err) {
-	//         console.error("AJAX Get An Error: " + err.toUpperCase());
-	//     }
-	// });
+	$.ajax({
+	    type: 'get',
+	    url: 'http://api.k780.com/?app=weather.today&weaid=1122&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=data',
+	    dataType: 'jsonp',
+	    jsonp: 'callback',
+	    jsonpCallback: 'data',
+	    success: function(data) {
+	    	let result = data.result;
+	        $('.weather .temperature').html(result.temperature_curr);
+	        $('.weather svg use').attr("xlink:href", "#weather-" + weather_icons[result.weather_iconid]);
+	    },
+	    error: function(data, err) {
+	        console.error("AJAX Get An Error: " + err.toUpperCase());
+	    }
+	});
 	
 	// Emmet syntax: div.lazy-load-img>img.placeholder-img[data-src=""], 同时去掉src属性
 	toLoadImgsLazily('body', function(img, i) {
@@ -112,7 +112,6 @@ $(function() {
     	autoDraggerLength:false, 
     	autoHideScrollbar: true
     });
-
 })
 
 

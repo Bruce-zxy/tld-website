@@ -54,7 +54,7 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 
 /*css main*/
 html, body { height: 100vh; width: 100vw; }
-body { overflow: auto; }
+body { overflow: auto; position: relative; }
 /*天气图标样式*/
 .weather svg { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
 .divider-vertical { display: inline-block; width: 1px; background-color: #EEE; }
@@ -81,10 +81,14 @@ body { overflow: auto; }
 }
 
 /*头部样式*/
-.header { height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; overflow: hidden; position: relative; z-index: 50 }
+.header { height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between;	/*overflow: hidden;*/ position: relative; z-index: 50 }
 .header div { line-height: 60px; }
 .header .weather .temperature { padding-right: 1vw; box-sizing: border-box; }
-.header .sns span { display: inline-block; box-sizing: border-box; }
+.header .sns>span { display: inline-block; box-sizing: border-box; position: relative; }
+.header .sns>span span { display: block; position: absolute; top: 55px; left: -50px; margin-left: 50%; background-color: #FFF; box-shadow: 2px 2px 4px #637181; transform: scale(0); }
+.header .sns>span span:before { content: ""; border: 10px solid transparent; border-bottom-color: #637181; position: absolute; left: 50px; margin-left: -10px; top: -20px; }
+.header .sns>span span img { width: 100px; height: 100px; }
+.header .sns>span:hover span { transform: scale(1); }
 .header .sns i { padding: 0 1vw; cursor: pointer; color: #637181; }
 .header .greeting .greeting-content { padding-left: 1.5vw; color: #637181; }
 .header .get-more { -ms-flex-align: center; align-items: center; }
@@ -98,9 +102,9 @@ body { overflow: auto; }
 .header .booking button:active { box-shadow: 1px 1px 2px #666; transform: translate(1px, 1px) scale(.9); }
 
 /*菜单样式*/
-.navigation { height: 60px; padding: 0 2vw; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; box-shadow: 0 2px 4px #666; position: relative; z-index: 49 }
+.navigation { height: 60px; padding: 0 2vw; box-sizing: border-box; background-color: #FFF; -ms-flex-pack: justify; justify-content: space-between; box-shadow: 0 2px 4px #666; position: relative; z-index: 49 }
 .navigation div { line-height: 60px; }
-.navigation .logo { width: 140px; background: url(../imgs/logo_01.jpg) center no-repeat; background-size: contain; }
+.navigation .logo { width: 140px; background: url(../imgs/logo_01.jpg) center no-repeat; background-size: contain; cursor: pointer; }
 .navigation .menu-list .menu { margin: 0 2vw; font-family: "宋体"; font-weight: 600; position: relative; }
 .navigation .menu-list .menu a { color: #000; }
 .navigation .menu-list .menu.active a { color: #b63b4d; }
@@ -209,8 +213,8 @@ body { overflow: auto; }
 
 /*尾部*/
 .footer { background-color: #272b2f; height: 410px; }
-.footer .footer-content { width: 73vw; margin: 0 auto; padding: 50px 0; -ms-flex-pack: center; justify-content: center; }
-.footer .footer-content>div { border-right: 1px dotted #999; padding: 0 40px; }
+.footer .footer-content { width: 73vw; min-width: 760px; margin: 0 auto; padding: 50px 0; -ms-flex-pack: center; justify-content: center; }
+.footer .footer-content>div { border-right: 1px dotted #999; padding: 0 2vw; }
 .footer .footer-content>div:last-child { border: none; padding-right: 0; }
 .footer .content-1 .footer-logo { height: 60px; }
 .footer .content-1 .concat-list .left { margin-right: 1vw; }
@@ -219,7 +223,16 @@ body { overflow: auto; }
 .footer .content-1 .concat-link { padding: 15px 0; margin-top: 20px; -ms-flex-pack: distribute; justify-content: space-around; }
 .footer .content-1 .concat-link i { border: 1px solid #3d4246; padding: 5px 15px; }
 .footer .content-2 { text-align: center; }
-.footer .content-2 img { width: 100px; margin: 15px 0; }
+.footer .content-2 img {
+	width: 100px;
+	margin: 15px 0;
+	cursor: pointer;
+	transition: all .35s ease-in-out;
+}
+.footer .content-2 img:hover {
+	transform: scale(1.1);
+	transition: all .35s ease-in-out;
+}
 .footer .content-3 { -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: start; justify-content: flex-start; }
 .footer .content-3 p { text-align: center; margin: 10px 0; }
 .footer .content-3 p a { transition: all .35s ease-in-out; }
@@ -231,23 +244,36 @@ body { overflow: auto; }
 .footer .content-4 p:first-child { padding: 0; color: #FFF; background-color: transparent; }
 .footer .content-4 p a { color: #FFF; }
 
+/*侧边栏*/
+.sidebar { position: fixed; right: 10px; bottom: 100px; z-index: 999; text-shadow: 2px 2px 10px; }
+.sidebar >div { height: 3vw; width: 3vw; background-color: #FFF; margin-bottom: 2px; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; border-radius: 4px; }
+.sidebar >div i { font-size: 2vw; }
+.sidebar >div:nth-child(1) a { color: #fd7c77; }
+.sidebar >div:nth-child(2) a { color: #ef8c17; }
+.sidebar >div:nth-child(3) a { color: #0185cf; }
+.sidebar >div:nth-child(4) a { color: #37b564; }
+
 /*版权声明*/
 .copyright { background-color: #000; text-align: center; padding: 20px 0; font-family: "宋体"; color: #888; }
 
 @media screen and (max-width:1260px) and (min-width:910px) {
 	.main { width: 100vw; padding: 60px 1vw; box-sizing: border-box; }
-	.activity .activity-content { width: 98vw; padding: 0 1vw; }
+	.activity .activity-content { width: 98vw; padding: 40px 1vw; }
 	.service-list { width: 98vw; padding: 0 1vw; }
-	.tour-route { width: 98vw; padding: 0 1vw; }
-	.footer .footer-content { width: 98vw; padding: 0 1vw; }
+	.tour-route { width: 98vw; padding: 50px 2vw; }
+	.footer .footer-content { width: 98vw; padding: 50px 1vw; }
+	.sidebar >div { height: 4vw; width: 4vw; }
+	.sidebar >div i { font-size: 3vw; }
 }
 @media screen and (max-width:909px) {
 	.navigation .menu-list { font-size: 14px; }
 	.navigation .menu-list .menu { margin: 0 1vw; }
 	.main { width: 100vw; padding: 60px 1vw; box-sizing: border-box; }
-	.activity .activity-content { width: 98vw; padding: 0 1vw; }
+	.activity .activity-content { width: 98vw; padding: 40px 1vw; }
 	.service-list { width: 98vw; padding: 0 1vw; }
-	.tour-route { width: 98vw; padding: 0 1vw; }
-	.footer .footer-content { width: 98vw; padding: 0 1vw; }
+	.tour-route { width: 98vw; padding: 50px 2vw; }
+	.footer .footer-content { width: 98vw; padding: 50px 1vw; }
+	.sidebar >div { height: 5vw; width: 5vw; }
+	.sidebar >div i { font-size: 4vw; }
 }
 /*css main*/
