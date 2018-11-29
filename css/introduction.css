@@ -3,7 +3,7 @@
 .huge-banner .banner-title { margin: 30px; }
 .huge-banner .banner-description { line-height: 26px; }
 /*主体内容*/
-.main { width: 73vw; margin: 20px auto 0; padding: 60px 1vw; }
+.main { width: 73vw; margin: 20px auto 0; padding: 20px 1vw 60px; }
 .main >span.divider-horizental { width: 100%; margin: 20px 0 40px; }
 /*景区简介*/
 .main .tld-introdution { margin-bottom: 20px; }
@@ -75,4 +75,7 @@
 .intro-photos .lazy-load-img { position: relative; overflow: hidden; width: 50%; margin-right: 20px; }
 .intro-photos .lazy-load-img:last-child { margin-right: 0; }
 .intro-photos .lazy-load-img img { position: absolute; z-index: 20; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out; }
+
+
+
 
