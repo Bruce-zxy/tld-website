@@ -44,6 +44,8 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .d-ib { display: inline-block }
 .d-f { display: -ms-flexbox; display: flex }
 .bg-flex { background-position: center; background-repeat: no-repeat; background-size: cover; }
+.bd-none { border: none!important; }
+.bd-trans { border-color: transparent!important; }
 .transition { transition: all .15s ease-in-out }
 .transition:active, .transition:focus, .transition:hover, .transition:visited { transition: all .15s ease-in-out }
 .click-animation { transform: scale(1) }

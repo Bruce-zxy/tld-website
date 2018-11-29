@@ -1,0 +1,85 @@
+.main { padding: 10px 1vw 40px; }
+
+/*腾龙洞简介*/
+.tld-intro { /*margin-bottom: 40px;*/ }
+.tld-intro .tld-intro-container { width: 73vw; margin: 0 auto; padding: 40px 0; box-sizing: border-box; -ms-flex-pack: distribute; justify-content: space-around; }
+.tld-intro .tld-intro-container .left { width: 66%; margin-right: 2vw; }
+.tld-intro .tld-intro-container .left p { line-height: 26px; }
+.tld-intro .tld-intro-container .left p:first-child { margin-bottom: 10px; }
+.tld-intro .tld-intro-container .right { width: 33%; -ms-flex-pack: center; justify-content: center; }
+.tld-intro .tld-intro-container .right a { width: 33%; height: 160px; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; padding: 0 .5vw; margin-right: .25vw; color: #FFF; }
+.tld-intro .tld-intro-container .right a p:last-child { font-family: "Arial"; }
+.tld-intro .tld-intro-container .right a:nth-child(1) { background-color: #924a49; }
+.tld-intro .tld-intro-container .right a:nth-child(2) { background-color: #637181; }
+.tld-intro .tld-intro-container .right a:nth-child(3) { background-color: #ad9778; }
+.tld-intro .tld-intro-container .right a:last-child { margin-right: 0; }
+
+/*景点列表*/
+.scenic-intro-list { width: 100%; margin-bottom: 40px; }
+.scenic-intro-list .scenic-card { padding: 40px 0; border-bottom: 1px dotted #CCC; width: 100%; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; height: 180px; }
+.scenic-intro-list .scenic-card .scenic-card-img { width: 25%; height: 100%;overflow: hidden; position: relative; }
+.scenic-intro-list .scenic-card .scenic-card-img img { position: absolute; top: 50%; left: 50%; }
+.scenic-intro-list .scenic-card .scenic-card-content { position: relative; width: 75%; padding-left: 1.5vw; line-height: 26px; color: #333; }
+.scenic-intro-list .scenic-card .scenic-card-content p:first-child { margin-bottom: 10px; }
+.scenic-intro-list .scenic-card .scenic-card-content a { display: -ms-flexbox; display: flex; width: 6vw; height: 30px; color: #555; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; position: absolute; bottom: 0; left: 1.5vw; border: 1px solid #CCC; }
+.scenic-intro-list .scenic-card .scenic-card-content a i { margin-left: .5vw; }
+.scenic-intro-list .scenic-card .scenic-card-content a:hover i { transform: translateX(.5vw); }
+
+/*分页器*/
+.pagination {
+	width: 100%;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-align: center;
+	    align-items: center;
+}
+.pagination ul {
+	display: -ms-flexbox;
+	display: flex;
+}
+.pagination ul li {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	border: 1px solid #CCC;
+	color: #333;
+	margin-right: .5vw;
+	cursor: pointer;
+}
+.pagination ul li.active, .pagination ul li.jump-btn {
+	border-color: #924a49;
+	background-color: #924a49;
+	color: #FFF;
+}
+.pagination ul li.jump-btn {
+	padding: .2vw .5vw;
+}
+.pagination ul li a {
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: .2vw .5vw;
+
+}
+.pagination ul li.active a {
+	color: #FFF;
+}
+.pagination ul input {
+	width: 3vw;
+	border: none;
+	outline: none;
+	height: 100%;
+}
+
+
+
+@media screen and (max-width:1260px) {
+	.tld-intro .tld-intro-container {
+		width: 100vw;
+		padding: 40px 1vw;
+	}
+}
