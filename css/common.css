@@ -66,7 +66,7 @@ html, body { height: 100vh; width: 100vw; overflow: hidden; }
 .divider-horizental { display: inline-block; height: 1px; background-color: #EEE }
 .title-underline { display: inline-block; height: 2px; width: 5vw; background-color: #924a49; border-right: 40px solid #e6e6e6; }
 .lazy-load-img { display: block; position: relative; z-index: 9; background: radial-gradient(#eeeeee, #cccccc) }
-.lazy-load-img img { height: 100% }
+.lazy-load-img img { height: 100%; position: absolute; left: 50%; top: 50%; transition: all .35s ease-in-out; }
 .lazy-load-base { height: 9em; left: 50%; margin: -7.5em; padding: 3em; position: absolute; top: 50%; width: 9em; transform: rotateX(45deg) rotateZ(45deg); transform-style: preserve-3d }
 .lazy-load-cube, .lazy-load-cube:after, .lazy-load-cube:before { content: ''; float: left; height: 3em; position: absolute; width: 3em }
 .lazy-load-cube { background-color: #05afd1; position: relative; transform: translateZ(3em); transform-style: preserve-3d; transition: .25s; box-shadow: 13em 13em 1.5em rgba(0, 0, 0, 0.1); animation: anim 1s infinite }
@@ -127,6 +127,14 @@ html, body { height: 100vh; width: 100vw; overflow: hidden; }
 .navigation .menu-list .menu .submenu:hover { background: #444359; color: white }
 .navigation .menu-list .menu .submenu:hover a { background: #444359; color: white }
 .navigation .menu-list .menu:hover .menu-center { height: auto; opacity: 1 }
+.pagination { width: 100%; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
+.pagination ul { display: -ms-flexbox; display: flex; }
+.pagination ul li { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; border: 1px solid #CCC; color: #333; margin-right: .5vw; cursor: pointer; }
+.pagination ul li.active, .pagination ul li.jump-btn { border-color: #924a49; background-color: #924a49; color: #FFF; }
+.pagination ul li.jump-btn { padding: .2vw .5vw; }
+.pagination ul li a { display: -ms-inline-flexbox; display: inline-flex; -ms-flex-align: center; align-items: center; width: 100%; height: 100%; padding: .2vw .5vw; }
+.pagination ul li.active a { color: #FFF; }
+.pagination ul input { width: 3vw; border: none; outline: none; height: 100%; padding: 0 5px; }
 .footer { background-color: #272b2f; height: 410px }
 .footer .footer-content { width: 73vw; min-width: 760px; margin: 0 auto; padding: 50px 0; -ms-flex-pack: center; justify-content: center }
 .footer .footer-content>div { border-right: 1px dotted #999; padding: 0 2vw }
