@@ -69,6 +69,15 @@ function isDomExist($dom) {
     return !!$dom.length;
 }
 
+function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+}
+
 $(function() {
 
 	// Emmet语法:div.lazy-load-img>img.placeholder-img[data-src=""],同时去掉src属性

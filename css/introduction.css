@@ -4,7 +4,7 @@
 .huge-banner .banner-description { line-height: 26px; }
 
 /*主体内容*/
-.main { width: 73vw; margin: 20px auto 80px; }
+.main { width: 73vw; margin: 20px auto 0; padding: 60px 1vw; }
 .main >span.divider-horizental { width: 100%; margin: 20px 0 40px; }
 
 /*景区简介*/
@@ -15,7 +15,7 @@
 .main .tld-introdution .right { width: 75%; }
 
 /*景点列表*/
-.main .scenic-list { width: 73vw; height: 170px; -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 40px; }
+.main .scenic-list { width: 100%; height: 170px; -ms-flex-pack: distribute; justify-content: space-around; margin-bottom: 40px; }
 .main .scenic-list>div { margin-right: 1vw; position: relative; width: 25%; height: 100%; overflow: hidden; }
 .main .scenic-list>div:last-child { margin-right: 0; }
 .main .scenic-list .scenic-mask { position: absolute; background-color: rgba(0, 0, 0, .55); top: 0; transition: all .25s ease-in-out; }
