@@ -1,0 +1,37 @@
+.pictures-view { width: 73vw; margin: 0 auto 70px; }
+.pictures-view .pictures-label { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 20px 18vw 20px; }
+.pictures-view .pictures-label span { display: inline-block; padding: 5px 1.5vw; margin: 0 1vw 20px 0; border-radius: 30px; height: 30px; box-sizing: border-box; color: #924A49; border: 1px solid #924A49; transition: all .35s ease-in-out; cursor: pointer; }
+.pictures-view .pictures-label span:hover, .pictures-view .pictures-label span.active { color: #FFF; background-color: #924A49; transition: all .35s ease-in-out; }
+.pictures-list { display: -ms-flexbox; display: flex; box-sizing: border-box; -ms-flex-wrap: wrap; flex-wrap: wrap; -ms-flex-pack: start; justify-content: flex-start; }
+.pictures-list .lazy-load-img { width: 33%; height: 230px; margin: 0 .5% .5% 0; box-sizing: border-box; }
+.pictures-list .lazy-load-img:nth-child(3n) { margin-right: 0; }
+.pictures-list .lazy-load-img img { position: absolute; left: 50%; top: 50%; }
+.pictures-list .lazy-load-img:hover img { transform: scale(1.1); }
+.pictures-list .lazy-load-img a { display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 30px; line-height: 30px; font-family: "microsoft yahei"; font-size: 16px; padding: 0 20px; box-sizing: border-box; color: #FFF; background-color: rgba(0, 0, 0, .6); z-index: 99; }
+.media-view-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vw; z-index: -2; opacity: 0; background-color: rgba(0, 0, 0, .8); transition: all .35s ease-in-out; }
+.media-view-modal .media-view { height: 80vh; width: 80vw; margin: -40vh 0 0 -40vw; position: fixed; top: 50%; left: 50%; z-index: -1; opacity: 0; background-color: transparent; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; transition: all .35s ease-in-out; transform: scale(.5) }
+.media-view-modal .media-view img { max-width: 100%; max-height: 100%; border-radius: 10px; box-shadow: 4px 4px 8px #333; }
+.media-view-modal .media-view i { position: absolute; top: 40%; color: #FFF; cursor: pointer; transition: all .35s ease-in-out; }
+.media-view-modal .media-view i:first-child { left: 2vw; }
+.media-view-modal .media-view i:first-child:hover { transform: translateX(-1vw); }
+.media-view-modal .media-view i:last-child { right: 2vw; }
+.media-view-modal .media-view i:last-child:hover { transform: translateX(1vw); }
+.media-view-modal.active { z-index: 999; opacity: 1; transition: all .35s ease-in-out; }
+.media-view-modal.active .media-view { z-index: 1000; opacity: 1; transition: all .35s ease-in-out; transform: scale(1); }
+.media-view-modal .close { position: absolute; top: 10px; right: 2vw; cursor: pointer; transition: all .35s ease-in-out; }
+.media-view-modal .close:hover { transform: scale(.8); transition: all .35s ease-in-out; color: #FFF; }
+.video-view { width: 100%; padding-top: 40px; box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -ms-flex-pack: start; justify-content: flex-start; }
+.video-view .video-container { width: 33%; margin: 0 .5% 3% 0; }
+.video-view .video-container:nth-child(3n) { margin-right: 0; }
+.video-view .video-container .lazy-load-img { height: 240px; }
+.video-view .video-container .lazy-load-img a { display: block; position: absolute; top: 50%; left: 50%; margin: -45px 0 0 -30px; z-index: 99; color: #FFF; transition: all .35s ease-in-out; }
+.video-view .video-container .lazy-load-img a:hover { transform: scale(1.3); animation: rotate 2s linear .35s infinite; transition: all .35s ease-in-out; }
+.video-view .video-container .video-info p { text-align: center; line-height: 28px; }
+.video-view .video-container .video-info p:first-child { margin-top: 20px; }
+@keyframes rotate {
+	0% { transform: rotate(0deg) scale(1.3); }
+	100% { transform: rotate(360deg) scale(1.3); }
+}
+@media screen and (max-width:1260px) {
+	.video-view, .pictures-view { width: 100vw; padding: 0 1vw; }
+}
