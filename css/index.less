@@ -1,0 +1,29 @@
+@divider_width: 22.67vw;
+
+.bs-border() {
+	box-sizing: border-box;
+}
+.d-b() {
+	display: block;
+}
+.d-ib() {
+	display: inline-block;
+}
+
+.home-container {
+	color: #FFF;
+	.banner-intro {
+		height: 6rem;
+		padding: 1.4rem 13.33vw 0;
+		.divider-horizental {
+			width: @divider_width
+		}
+		.get-more {
+			padding: 10px 4.67vw;
+			background-color: #FFF;
+			border-radius: 10px;
+			.bs-border();;
+			.d-ib();
+		}
+	}
+}
