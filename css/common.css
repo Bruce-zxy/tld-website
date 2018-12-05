@@ -16,6 +16,7 @@ ol, ul { list-style-image: none; list-style-position: outside; list-style-type: 
 caption, th { text-align: left }
 q:before, q:after, blockquote:before, blockquote:after { content: "" }
 a, a:hover, a:active, a:focus, a:visited { text-decoration: none; color: #333333; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); -webkit-user-select: none; -moz-user-focus: none; -moz-user-select: none; }
+input { -webkit-tap-highlight-color:rgba(0,0,0,0); }
 button { border: none; background: transparent; outline: none; cursor: pointer; color: #FFF }
 
 .f-FZLTHJW { font-family: "FZLTHJW" }
