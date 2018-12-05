@@ -1,4 +1,6 @@
 @divider_width: 22.67vw;
+@navi_color: #914A49;
+@mask_color: rgba(0, 0, 0, .4);
 
 .bs-border() {
 	box-sizing: border-box;
@@ -97,5 +99,102 @@
 			
 		}
 
+	}
+}
+
+.overview-list {
+	padding: .15rem .2rem;
+	background-color: #f0f0f0;
+	.overview-item {
+		padding-bottom: .2rem;
+		background-color: #FFF;
+		margin-bottom: .2rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		.item-title {
+			padding: .3rem .2rem;
+			border-bottom: 1px solid #F4F4F4;
+			justify-content: flex-start;
+			align-items: center;
+			.bs-border();
+			i {
+				color: @navi_color;
+				margin-right: .1rem;
+			}
+		}
+		.overview-content {
+			padding: .35rem .25rem .15rem;
+			text-align: center;
+			.bs-border();
+			p {
+				font-family: "FZLTHJW";
+				font-size: .26rem;
+				line-height: .42rem;
+				text-align: left;
+				text-indent: .52rem;
+			}
+			img {
+				max-width: 100%;
+				max-height: 4rem;
+				margin: .2rem auto;
+			}
+		}
+		.overview-album {
+			flex-wrap: wrap;
+			padding: .25rem;
+			.bs-border();
+			.album-img {
+				position: relative;
+				height: 1.2rem;
+				width: 49%;
+				margin-bottom: .5%;
+				.bs-border();
+				&:nth-child(2n-1) {
+					margin-right: 1%;
+				}
+				a {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-family: "宋体";
+					font-size: .3rem;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 999;
+					color: #FFF;
+					background-color: @mask_color;
+				}
+				p {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					height: .4rem;
+					width: 100%;
+					line-height: .45rem;
+					text-align: center;
+					color: #FFF;
+					background-color: @mask_color;
+				}
+			}
+		}
+		.overview-btn {
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+			a {
+				display: block;
+				padding: .1rem .4rem;
+				margin: .2rem 0;
+				border: 1px solid @navi_color;
+				border-radius: 4px;
+				color: @navi_color;
+				font-size: .2rem;
+				.bs-border();
+			}
+		}
 	}
 }

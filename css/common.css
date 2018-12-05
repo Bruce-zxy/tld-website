@@ -76,3 +76,10 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .sidebar >div:nth-child(2) a { color: #ef8c17 }
 .sidebar >div:nth-child(3) a { color: #0185cf }
 .sidebar >div:nth-child(4) a { color: #37b564 }
+.navigation-bar { position: relative; color: #FFF; }
+.navigation-bar .navigation-title { height: .9rem; line-height: .9rem; text-align: center; background-color: #914A49; }
+.navigation-bar i { position: absolute; top: 50%; left: .2rem; margin-top: -.25rem; color: #FFF }
+@keyframes anim {
+	50% { transform: translateZ(0.5em) }
+}
+
