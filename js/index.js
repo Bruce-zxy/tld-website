@@ -61,6 +61,7 @@ function onWindowResizing(e) {
 		$(window).off("resize").on("resize", function () {
 			if ($(window).width() > 640) window.location.reload();
 		});
+		window.location.href = './mobile';
 	} else {
 		toSliceDomContent(Math.floor((windowWidth - (left_width + right_width + 80)) / font_size), dom_content)
 	}
