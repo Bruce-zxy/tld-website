@@ -1,16 +1,7 @@
-.slider { overflow: hidden }
-.shutter { overflow: hidden; position: relative }
-.shutter-img { z-index: 1 }
-.shutter-img, .shutter-img a { position: absolute; left: 0; top: 0; width: 100%; height: 100% }
-.shutter-img a { cursor: default }
-.shutter-img a > img { width: 100%; height: 100% }
-.shutter-img .created { overflow: hidden; position: absolute; z-index: 20 }
-.shutter-img a:not(.active) div { opacity: 0 }
-.shutter-img .created div { display: none }
-.shutter-btn li { position: absolute; z-index: 2; top: 50%; margin-top: -45px; cursor: pointer }
-.shutter-btn li.prev { left: 20px; color: #FFF }
-.shutter-btn li.next { right: 20px; color: #FFF }
-.shutter-btn li.prev:hover, .shutter-btn li.next:hover { color: #EEE; transform: scale(.95); transform-origin: 50% }
+.shutter .shutter-btn li.prev { left: -60px; }
+.shutter .shutter-btn li.next { right: -60px; }
+.shutter:hover .shutter-btn li.prev { left: 20px; }
+.shutter:hover .shutter-btn li.next { right: 20px; }
 .scenic-list { height: 280px; margin-top: 1px; -ms-flex-pack: justify; justify-content: space-between }
 .scenic-list .scenic-container { height: 100%; width: 25vw; overflow: hidden; margin: 0 1px; position: relative }
 .scenic-list .scenic-container img { position: absolute; z-index: 20; top: 0; left: 50%; top: 50%; cursor: pointer; transition: all .5s ease-in-out }
@@ -26,7 +17,8 @@
 .main { width: 73vw; margin: 0 auto; padding: 60px 0 }
 .main .main-title { font-family: "宋体"; color: #333333; font-weight: 600; text-align: center }
 .main .main-subtitle { color: #637181; text-align: center; margin: 10px 0 60px }
-.main .main-banner { height: 300px; background-position: center; background-repeat: no-repeat; background-size: cover; margin-bottom: 50px }
+.main .main-banner { height: 300px; background-position: center; background-repeat: no-repeat; background-size: cover; margin-bottom: 50px; transition: all .35s ease-in-out; }
+.main .main-banner:hover { transform: scale(1.02); box-shadow: 0px 0px 8px #000; border-radius: 6px; }
 .main .main-intro { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around }
 .main .main-intro>div { margin-right: 2vw }
 .main .main-intro>div:last-child { margin-right: 0 }
@@ -45,7 +37,8 @@
 .main .main-intro .intro-mask:hover .divider-container .divider-horizental { width: 50%; transition: all .75s ease-in }
 .main .main-intro .intro-mask .intro-description { font-family: "宋体"; color: #FFF; margin-bottom: 35px; height: 78px; line-height: 26px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical }
 .main .main-intro .intro-mask .intro-more { display: inline-block; padding: 15px 2vw; color: #000; background-color: #FFF; border-radius: 24px }
-.main .main-intro .news-title, .main .main-intro .news-date { font-family: "宋体"; color: #333; line-height: 36px; margin-bottom: 10px }
+.main .main-intro .news-title, .main .main-intro .news-date { font-family: "宋体"; color: #333; line-height: 36px; margin-bottom: 10px; transition: all .35s ease-in-out }
+.main .main-intro .news-title:hover { color: #e83632; }
 .main .main-intro .get-details { display: inline-block; padding: 10px 0; color: #333; font-family: "宋体"; border-bottom: 1px solid #924a49 }
 .activity { width: 100vw; height: 530px; margin-bottom: 80px; background-position: center; background-size: cover; background-repeat: no-repeat }
 .activity .activity-content { width: 73vw; height: 100%; padding: 40px 0; margin: 0 auto; box-sizing: border-box; display: -ms-flexbox; display: flex }
@@ -61,7 +54,7 @@
 .activity .activity-content .show-date .show-time span:last-child { display: block; border: 2px solid #FFF; border-radius: 6px; padding: 10px 0 20px; box-sizing: border-box }
 .activity .activity-content .activity-details .details-more { color: #FFF; font-family: "microsoft yahei"; text-align: right }
 .activity .activity-content .activity-details .details-more a { display: inline-block; color: #FFF; font-family: "microsoft yahei"; margin-left: 1.5vw }
-.activity .activity-content .activity-details .details-more i { display: inline-block; animation: enter 1.5s ease-in-out infinite; transform-origin: 50% 50% }
+.activity .activity-content .activity-details .details-more i { display: inline-block; animation: enter 1.5s ease-in-out infinite; transform-origin: 50% 50%; margin-left: .75em; }
 @keyframes enter {
 	50% { transform: translateX(-0.5em) }
 }
@@ -70,7 +63,7 @@
 .service-list .service .service-name { color: #637181 }
 .service-list .service .divider-group { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; padding: 10px 0 }
 .service-list .service .divider-horizental { background-color: #637181; width: 45% }
-.service-list .service .service-english { font-family: "Arial"; color: #ad9778 }
+.service-list .service .service-english { font-family: "Arial"; color: #637181 }
 .tour-route { width: 73vw; margin: 0 auto; padding: 50px 2.5vw; background-color: #ad9778; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; box-sizing: border-box; color: #FFF; margin-bottom: 80px }
 .tour-route .route { padding: 0 3vw; border-right: 1px dotted #FFF }
 .tour-route .route:first-child { padding-left: 0 }
