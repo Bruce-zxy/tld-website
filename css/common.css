@@ -38,6 +38,7 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .fs-36 { font-size: .36rem }
 .fs-40 { font-size: .40rem }
 .fs-50 { font-size: .50rem }
+.fs-70 { font-size: .70rem }
 .fw-600 { font-weight: 600 }
 .d-i { display: line }
 .d-b { display: block }
