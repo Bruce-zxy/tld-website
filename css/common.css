@@ -69,3 +69,10 @@ button { border: none; background: transparent; outline: none; cursor: pointer; 
 .mCustomScrollbar .mCSB_scrollTools { z-index: 999 }
 .divider-vertical { display: inline-block; width: 1px; background-color: #EEE }
 .divider-horizental { display: inline-block; height: 1px; background-color: #EEE }
+.sidebar { position: fixed; right: 5px; top: 3rem; z-index: 999; text-shadow: 2px 2px 10px }
+.sidebar >div { height: .8rem; width: .8rem; background-color: #FFF; margin-bottom: .05rem; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; border-radius: 4px }
+.sidebar >div i { font-size: .5rem; }
+.sidebar >div:nth-child(1) a { color: #fd7c77 }
+.sidebar >div:nth-child(2) a { color: #ef8c17 }
+.sidebar >div:nth-child(3) a { color: #0185cf }
+.sidebar >div:nth-child(4) a { color: #37b564 }
