@@ -171,6 +171,18 @@ html, body { height: 100vh; width: 100vw; overflow: hidden; /*background-color: 
 .sidebar >div:nth-child(2) a { color: #ef8c17 }
 .sidebar >div:nth-child(3) a { color: #0185cf }
 .sidebar >div:nth-child(4) a { color: #37b564 }
+.search-mask { position: fixed; left: 0; top: 0; z-index: -1; opacity: 0; width: 100vw; height: 100vw; background-color: rgba(0, 0, 0, .8); display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; transition: all .35s ease-in-out; }
+.search-mask .search-container { width: 50vw; position: absolute; top: 10%; }
+.search-mask .search-close { position: absolute; top: 20px; right: 30px; color: #FFF; cursor: pointer; }
+.search-container .search-content { width: 100%; display: -ms-flexbox; display: flex; border: 4px solid #69635C; border-radius: 2px; box-sizing: border-box; }
+.search-container .search-content input { width: calc(100% - 60px); box-sizing: border-box; padding: 5px 10px; }
+.search-container .search-content button { width: 60px; box-sizing: border-box; background-color: #914A49; }
+.search-container .search-tips { color: #FFF; margin: 15px 0; }
+.search-container .search-labels { width: 100%; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+.search-container .search-labels a { font-family: "microsoft yahei"; font-size: 14px; color: #fff; display: inline-block; margin: 1vw 0; width: 50%; box-sizing: border-box; }
+.search-container .search-labels a:nth-child(2n-1) { padding-right: 2vw; }
+.search-container .search-labels a:nth-child(2n) { padding-left: 2vw; }
+.search-mask.active { z-index: 9999; opacity: 1; transition: all .35s ease-in-out; }
 .copyright { background-color: #000; text-align: center; padding: 20px 0; font-family: "宋体"; color: #888 }
 @media screen and (max-width:1260px) and (min-width:910px) {
 	.main { width: 100vw; padding: 60px 1vw; box-sizing: border-box }

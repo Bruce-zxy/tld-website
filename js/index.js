@@ -99,6 +99,18 @@ $(function() {
     	scrollEasing: "easeOut"
     });
 
+    if (!!$(".search-icon").length) {
+    	$(".search-icon").click(function (e) {
+	        $(".search-mask").removeClass("active").addClass("active");
+	    })
+    }
+    if (!!$(".search-close").length) {
+    	$(".search-close").click(function (e) {
+    	    $(".search-mask").removeClass("active");
+    	})
+    }
+
+
 
     // 天气
 	// $.ajax({
