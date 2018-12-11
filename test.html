@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!------分------割------线------>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="bruce-zxy">
+    <meta name="contact" content="bruce_zxy@163.com">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>New Test</title>
+    <link rel="stylesheet" type="text/css" href="" />
+    <style type="text/css">
+		body {
+			background-color: #000;
+		}
+    </style>
+
+</head>
+<!------分------割------线------>
+
+<body>
+
+	 <canvas id="canvas" width="300" height="300">
+	    <p>抱歉，您的浏览器不支持canvas</p>
+	 </canvas>
+
+</body>
+
+<!------分------割------线------>
+
+<script type="text/javascript">
+
+	function toCanvas(id, time) {
+	    // canvas进度条
+	    var canvas = document.getElementById(id),
+	        ctx = canvas.getContext("2d"),
+	        percent = 100, // 最终百分比
+	        circleX = canvas.width / 2, //中心x坐标
+	        circleY = canvas.height / 2, //中心y坐标
+	        radius = 100, // 圆环半径
+	        lineWidth = 5, // 圆形线条的宽度
+	        step = 100 * 16 / time; // 步进长度
+	    // 画弧线
+	    function sector(cx, cy, r, startAngle, endAngle, anti) {
+	        ctx.beginPath();
+	        ctx.lineWidth = lineWidth;
+	        // 渐变色 - 可自定义
+	        var linGrad = ctx.createLinearGradient(
+	        	circleX - radius - lineWidth, 
+	        	circleY, 
+	        	circleX + radius + lineWidth, 
+	        	circleY
+	        );
+	        linGrad.addColorStop(0.0, '#fff');
+	        linGrad.addColorStop(1.0, '#fff');
+	        ctx.strokeStyle = linGrad;
+	        // 圆弧两端的样式
+	        ctx.lineCap = 'round';
+	        // 圆弧
+	        ctx.arc(
+	            cx, cy, r,
+	            (Math.PI * 2 / 3),
+	            (Math.PI * 2 / 3) + endAngle / 100 * (Math.PI * 5 / 3),
+	            false
+	        );
+	        ctx.stroke();
+	    }
+	    // 刷新
+	    function loading() {
+	        if (process >= percent) {
+	            clearInterval(circleLoading);
+	            sector(circleX, circleY, radius, Math.PI * 2 / 3, 100);
+	        }
+	        // 清除canvas内容
+	        ctx.clearRect(0, 0, circleX * 2, circleY * 2);
+	        // 圆弧
+	        sector(circleX, circleY, radius, Math.PI * 2 / 3, process);
+	        process += step;
+	    }
+	    var process = 0.0; // 进度
+	    var circleLoading = window.setInterval(loading, 16);
+	}
+	toCanvas('canvas', 5000);
+
+</script>
+
+</html>

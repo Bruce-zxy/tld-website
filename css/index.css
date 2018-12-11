@@ -72,3 +72,8 @@
 .tour-route .route .route-name .initial-name { margin-right: 15px }
 .tour-route .route .route-name .name { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: start; align-items: flex-start; -ms-flex-pack: center; justify-content: center; text-align: left }
 .tour-route .route .route-details { font-family: "microsoft yahei"; line-height: 24px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical }
+
+
+.fullscreen-content {
+	
+}

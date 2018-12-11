@@ -83,8 +83,8 @@ $(function() {
 
 	// Emmet语法:div.lazy-load-img>img.placeholder-img[data-src=""],同时去掉src属性
 	toLoadImgsLazily('body', function(img, i) {
-		$($(".lazy-load-img img")[i]).css("margin-left", -img.width/2);
-		$($(".lazy-load-img img")[i]).css("margin-top", -img.height/2);
+		$(img).css("margin-left", -img.width/2);
+		$(img).css("margin-top", -img.height/2);
 	});
 
 	// 限制greeting的字数，多余的用溢出省略符代替
