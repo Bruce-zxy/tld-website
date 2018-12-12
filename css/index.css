@@ -132,20 +132,20 @@
 .explore { margin-left: 16vw; margin-top: 8vh; display: -ms-flexbox; display: flex; }
 .explore-tld { width: 34.3vw; padding: 65px; box-sizing: border-box; background-image: url('../imgs/kuang.png'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; }
 .explore-tld p:nth-child(1) { font-family: 'FZLTHJW'; text-align: justify; font-size: 30px; margin-bottom: 10px; }
-.explore-tld p:nth-child(2) { font-family: 'Baskerville_Old_Face'; text-align: justify; font-size: 14px; margin-bottom: 50px; }
-.explore-tld p:nth-child(3) { font-family: 'microsoft yahei'; text-align: justify; font-size: 14px; margin-bottom: 40px; }
+.explore-tld p:nth-child(2) { font-family: 'Baskerville_Old_Face'; text-align: justify; font-size: 14px; margin-bottom: 2.5vw; }
+.explore-tld p:nth-child(3) { font-family: 'microsoft yahei'; text-align: justify; font-size: 14px; margin-bottom: 40px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical;}
 .explore-tld >a { padding: 10px 25px; border: 1px solid #FFF; color: #FFF; }
 .explore-details { width: 28.9vw; padding: 20px 0  20px 1vw; box-sizing: border-box; }
-.explore-details .c-details { display: -ms-flexbox; display: flex; margin-bottom: 30px; }
+.explore-details .c-details { display: -ms-flexbox; display: flex; margin-bottom: 1.5vw; }
 .explore-details .c-details:last-child { margin-bottom: 0; }
 .explore-details .c-details >i { margin: 5px 1.5vw 0; }
 .explore-details .c-details >span .divider-horizental { width: 1vw; }
-.explore-details .c-details >span .title { font-family: 'microsoft yahei'; font-size: 18px; line-height: 32px; }
-.explore-details .c-details >span .subtitle { font-family: 'microsoft yahei'; font-size: 12px; line-height: 20px; }
+.explore-details .c-details >span .title { font-family: 'microsoft yahei'; font-size: 18px; line-height: 32px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.explore-details .c-details >span .subtitle { font-family: 'microsoft yahei'; font-size: 12px; line-height: 20px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 
 /*第三页*/
-.fullscreen-scenic { position: absolute; left: 47.92vw; top: 0; padding: 70px 3vw 0; box-sizing: border-box; }
-.fullscreen-scenic .title { font-family: 'FZLTHJW'; color: #e78a3d; margin-bottom: 50px; }
+.fullscreen-scenic { position: absolute; left: 47.92vw; width: 53vw; top: 0; padding: 3.5vw 3vw 0; box-sizing: border-box; }
+.fullscreen-scenic .title { font-family: 'FZLTHJW'; color: #e78a3d; margin-bottom: 2.5vw; }
 .fullscreen-scenic .title p:first-child { font-weight: 600; font-size: 38px; }
 .fullscreen-scenic .title p:first-child span { font-weight: 600; font-style: italic; font-size: 60px; margin-right: 1vw; }
 .fullscreen-scenic .title p:last-child { font-size: 18px; }
@@ -155,9 +155,9 @@
 .fullscreen-scenic .scenic-info { color: #333; line-height: 22px; margin-bottom: 20px; }
 .fullscreen-scenic .buy-tickets { color: #e78a3d; border: 1px solid #e78a3d; padding: 6px 2vw; margin-bottom: 20px; }
 
-#scenic-swiper { height: 8.85vw; width: calc(8.85vw * 6); top: 70px; left: -20.6vw; }
-#button-prev { position: absolute; top: 100%; width: 27px; height: 44px; margin-top: -22px; z-index: 10; cursor: pointer; left: -21vw; right: auto; }
-#button-next { position: absolute; top: 100%; width: 27px; height: 44px; margin-top: -22px; z-index: 10; cursor: pointer; right: 21vw; left: auto; }
+#scenic-swiper { height: 8.85vw; width: calc(8.85vw * 6); top: 3.5vw; left: -20.6vw; }
+#button-prev { position: absolute; top: 97%; width: 27px; height: 44px; margin-top: -22px; z-index: 10; cursor: pointer; left: -23vw; right: auto; }
+#button-next { position: absolute; top: 97%; width: 27px; height: 44px; margin-top: -22px; z-index: 10; cursor: pointer; right: 20vw; left: auto; }
 #scenic-swiper .swiper-slide { background-color: rgba(255, 255, 255, .8); display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
 #scenic-swiper .swiper-slide >i { color: #e78a3d }
 #scenic-swiper .swiper-slide >p { color: #333; }
@@ -170,8 +170,60 @@
 #scenic-swiper .swiper-slide.active .divider-horizental { background-color: #fff }
 
 /*第四页*/
-
-
+.fullscreen-media {
+	position: absolute;
+	top: calc(50% - 31.5vh);
+	left: calc(50% - 30vw);
+	width: 60vw;
+	height: 63vh;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	padding: .5vw;
+	box-sizing: border-box;
+}
+.fullscreen-media >div {
+	height: 100%;
+	width: 25%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-align: center;
+	    align-items: center;
+	margin-right: .5vw;
+	text-align: center;
+	background-color: rgba(231, 138, 61, .8);
+}
+.fullscreen-media >div:last-child {
+	margin-right: 0;
+}
+.fullscreen-media >div >i {
+	font-size: 3.5vw;
+	margin-bottom: 1.25vw;
+}
+.fullscreen-media >div .media-name {
+	font-family: 'microsoft yahei';
+	font-size: 1.5vw;
+	margin-bottom: 1.5vw;
+}
+.fullscreen-media >div .divider-horizental {
+	width: 3.5vw;
+	margin-bottom: 1.5vw;
+}
+.fullscreen-media >div .media-intro {
+	font-family: 'microsoft yahei';
+	font-size: .8vw;
+	margin-bottom: 2.5vw;
+}
+.fullscreen-media >div .more-info {
+	color: #FFF;
+	padding: .5vw 1.25vw;
+	border: 1px solid #FFF;
+}
 
 
 
