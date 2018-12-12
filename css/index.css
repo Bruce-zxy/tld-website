@@ -155,77 +155,23 @@
 .fullscreen-scenic .scenic-info { color: #333; line-height: 22px; margin-bottom: 20px; }
 .fullscreen-scenic .buy-tickets { color: #e78a3d; border: 1px solid #e78a3d; padding: 6px 2vw; margin-bottom: 20px; }
 
+#scenic-swiper { height: 8.85vw; width: calc(8.85vw * 6); top: 70px; left: -20.6vw; }
+#button-prev { position: absolute; top: 100%; width: 27px; height: 44px; margin-top: -22px; z-index: 10; cursor: pointer; left: -21vw; right: auto; }
+#button-next { position: absolute; top: 100%; width: 27px; height: 44px; margin-top: -22px; z-index: 10; cursor: pointer; right: 21vw; left: auto; }
+#scenic-swiper .swiper-slide { background-color: rgba(255, 255, 255, .8); display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
+#scenic-swiper .swiper-slide >i { color: #e78a3d }
+#scenic-swiper .swiper-slide >p { color: #333; }
+#scenic-swiper .swiper-slide .slider-title { font-family: 'FZLTHJW'; font-size: 1vw; font-weight: 600; }
+#scenic-swiper .swiper-slide .slider-subtitle { font-family: 'microsoft yahei'; font-size: .8vw; }
+#scenic-swiper .swiper-slide .divider-horizental { width: 3vw; background-color: #e78a3d; margin: 10px 0; }
+#scenic-swiper .swiper-slide.active { background-color: rgba(231, 138, 61, .8); }
+#scenic-swiper .swiper-slide.active >i { color: #FFF; }
+#scenic-swiper .swiper-slide.active >p { color: #FFF }
+#scenic-swiper .swiper-slide.active .divider-horizental { background-color: #fff }
 
-#scenic-swiper {
-	height: 8.85vw;
-	width: calc(8.85vw * 6);
-	top: 70px;
-	left: -20.6vw;
-}
-#button-prev {
-	position: absolute;
-    top: 100%;
-    width: 27px;
-    height: 44px;
-    margin-top: -22px;
-    z-index: 10;
-    cursor: pointer;
-    left: -21vw;
-    right: auto;
-}
-#button-next {
-	position: absolute;
-	top: 100%;
-	width: 27px;
-	height: 44px;
-	margin-top: -22px;
-	z-index: 10;
-	cursor: pointer;
-	right: 21vw;
-	left: auto;
-}
-#scenic-swiper .swiper-slide {
-	background-color: rgba(255, 255, 255, .8);
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-direction: column;
-	    flex-direction: column;
-	-ms-flex-pack: center;
-	    justify-content: center;
-	-ms-flex-align: center;
-	    align-items: center;
-}
-#scenic-swiper .swiper-slide >i {
-	color: #e78a3d
-}
-#scenic-swiper .swiper-slide >p {
-	color: #333;
-}
-#scenic-swiper .swiper-slide .slider-title {
-	font-family: 'FZLTHJW';
-	font-size: 1vw;
-	font-weight: 600;
-}
-#scenic-swiper .swiper-slide .slider-subtitle {
-	font-family: 'microsoft yahei';
-	font-size: .8vw;
-}
-#scenic-swiper .swiper-slide .divider-horizental {
-	width: 3vw;
-	background-color: #e78a3d;
-	margin: 10px 0;
-}
-#scenic-swiper .swiper-slide.active {
-	background-color: rgba(231, 138, 61, .8);
-}
-#scenic-swiper .swiper-slide.active >i {
-	color: #FFF;
-}
-#scenic-swiper .swiper-slide.active >p {
-	color: #FFF
-}
-#scenic-swiper .swiper-slide.active .divider-horizental {
-	background-color: #fff
-}
+/*第四页*/
+
+
+
 
 
