@@ -12,8 +12,8 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>腾龙洞景区官网</title>
     <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_932805_iejt8k3pg6j.css" />
-    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_961478_fx7m30r1qib.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_961478_n8x9xpd49g.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
@@ -29,6 +29,154 @@
 		.ball-scale-ripple-multiple > div:nth-child(2) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s; }
 		.ball-scale-ripple-multiple > div:nth-child(3) { -webkit-animation-delay: 0.4s; animation-delay: 0.4s; }
 		.ball-scale-ripple-multiple { position: relative; -webkit-transform: translateY(-25px); -ms-transform: translateY(-25px); transform: translateY(-25px); }
+		.jc-fe { -ms-flex-pack: end !important; justify-content: flex-end !important; }
+		.fullscreen-content { height: 100%; width: 100%; position: absolute; padding: 20px 1vw; box-sizing: border-box; left: 0; top: 0; z-index: 19; color: #FFF; }
+		.fullscreen-content .fullscreen-header { display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-between; height: 80px; padding: 20px 1vw; box-sizing: border-box; }
+		.fullscreen-content .fullscreen-header .left { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; height: 100%; }
+		.fullscreen-content .fullscreen-header .left .divider-vertical { height: 30px; margin: 0 1vw; }
+		.fullscreen-content .fullscreen-header .left .weather { display: -ms-flexbox; display: flex; height: 100%; }
+		.fullscreen-content .fullscreen-header .left .weather .temperature { height: 100%; margin-left: 10px; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: start; justify-content: center; -ms-flex-align:; align-items: flex-start; }
+		.navi { height: 40px; box-sizing: border-box; -ms-flex-pack: justify; justify-content: space-between; position: relative; z-index: 49 }
+		.navi div { line-height: 40px; font-family: 'microsoft yahei'; font-size: 22px; }
+		.navi .menu-list .menu { margin: 0 1.5vw; font-family: "宋体"; font-weight: 600; position: relative }
+		.navi .menu-list .menu a { display: block; width: 100%; height: 100%; color: #FFF; text-shadow: 2px 2px 2px #000; }
+		.navi .menu-list .menu a i { margin-left: 5px; display: inline-block; transition: all .15s ease-in-out; }
+		.navi .menu-list .menu a:hover i { transform: rotate(180deg); }
+		.navi .menu-list .menu.active>a { color: #b63b4d }
+		.navi .menu-list .menu .menu-center { opacity: 0; height: 0; z-index: -1; overflow: hidden; position: absolute; left: 50%; margin-left: -75%; width: 150%; border-radius: 6px; box-shadow: 1px 4px 4px #333 }
+		.navi .menu-list .menu .submenu { width: 100%; font-weight: 500; text-align: center; background: rgba(0, 0, 0, .6); color: #666666; cursor: pointer; transition: all .1s ease-in-out; }
+		.navi .menu-list .menu .submenu:hover { background: #FFF; color: #333 }
+		.navi .menu-list .menu .submenu a { transition: all .1s ease-in-out; line-height: 60px; text-shadow: none; }
+		.navi .menu-list .menu .submenu:hover a { background: #FFF; color: #333 }
+		.navi .menu-list .menu:hover .menu-center { height: auto; opacity: 1 }
+
+		.fullscreen-footer { width: 100%; position: absolute; bottom: 20px; left: 0; height: 80px; padding: 20px 2vw 0 1vw; box-sizing: border-box; display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; z-index: 50 }
+		.fullscreen-footer .left { display: -ms-flexbox; display: flex; -ms-flex-pack: start; justify-content: flex-start; -ms-flex-align: center; align-items: center; font-size: 14px; text-shadow: 2px 2px 2px #000; }
+		.fullscreen-footer .right { display: -ms-flexbox; display: flex; -ms-flex-pack: end; justify-content: flex-end; -ms-flex-align: center; align-items: center; }
+		.fullscreen-footer div { line-height: 40px }
+		.fullscreen-footer .sns { margin: 0 1vw; }
+		.fullscreen-footer .sns>span { display: inline-block; box-sizing: border-box; position: relative }
+		.fullscreen-footer .sns>span span { display: block; position: absolute; bottom: 55px; left: -50px; margin-left: 50%; background-color: #FFF; box-shadow: 2px 2px 4px #637181; transform: scale(0) }
+		.fullscreen-footer .sns>span span:before { content: ""; border: 10px solid transparent; border-top-color: #FFF; position: absolute; left: 50px; margin-left: -10px; bottom: -20px }
+		.fullscreen-footer .sns>span span img { width: 100px; height: 100px }
+		.fullscreen-footer .sns>span:hover span { transform: scale(1) }
+		.fullscreen-footer .sns i { padding: 0 .2vw; cursor: pointer; color: #FFF }
+		.fullscreen-footer .greeting .greeting-content { padding-left: 1.5vw; color: #637181 }
+		.fullscreen-footer .get-more { -ms-flex-align: center; align-items: center }
+		.fullscreen-footer .get-more .concact i { color: #FFF; cursor: pointer }
+		.fullscreen-footer .get-more .phone-number { padding: 0 1vw; color: #FFF; }
+		.fullscreen-footer .select-lang { -ms-flex-align: center; align-items: center }
+		.fullscreen-footer .select-lang .select-language { padding: 0 1vw }
+		.fullscreen-footer .select-lang .select-language select { background: transparent; color: #fff; border-color: #fff; outline-color: #fff; }
+		.fullscreen-footer .select-lang .select-language select option { color: #000; }
+		.fullscreen-footer .search .search-icon { padding: 0 1vw; cursor: pointer }
+		.fullscreen-footer .booking { padding-left: 1vw }
+		.fullscreen-footer .booking button { background-color: #e78a3d; padding: 8px 12px; box-shadow: 1px 1px 4px #666; line-height: 20px; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
+		.fullscreen-footer .booking button:active { box-shadow: 1px 1px 2px #666; transform: translate(1px, 1px) scale(.9) }
+		.fullscreen-footer .booking button i { margin-right: 8px; }
+
+		/*轮播图*/
+		.swiper-container .swiper-pagination { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+		.swiper-container .swiper-pagination .bullet-container { width: 20px; height: 20px; margin: 5px 0; display: -ms-flexbox; border: 2px solid transparent; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; border-radius: 50%; }
+		.swiper-container .swiper-pagination .bullet-container.active { border: 2px solid #FFF; }
+		.swiper-container .swiper-pagination .swiper-pagination-bullet { opacity: 1; background-color: #FFF; cursor: pointer; }
+
+		/*第二页*/
+		.fullscreen .mouse { position: absolute; top: 86vh; left: 50%; margin-left: -14px; color: #FFF; z-index: 99; }
+		.explore { margin-left: 16vw; margin-top: 8vh; display: -ms-flexbox; display: flex; }
+		.explore-tld { width: 34.3vw; padding: 65px; box-sizing: border-box; background-image: url('../imgs/kuang.png'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; }
+		.explore-tld p:nth-child(1) { font-family: 'FZLTHJW'; text-align: justify; font-size: 30px; margin-bottom: 10px; }
+		.explore-tld p:nth-child(2) { font-family: 'Baskerville_Old_Face'; text-align: justify; font-size: 14px; margin-bottom: 2.5vw; }
+		.explore-tld p:nth-child(3) { font-family: 'microsoft yahei'; text-align: justify; font-size: 14px; margin-bottom: 40px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 10; -webkit-box-orient: vertical;}
+		.explore-tld >a { padding: 10px 25px; border: 1px solid #FFF; color: #FFF; }
+		.explore-details { width: 28.9vw; padding: 20px 0  20px 1vw; box-sizing: border-box; }
+		.explore-details .c-details { display: -ms-flexbox; display: flex; margin-bottom: 1.5vw; }
+		.explore-details .c-details:last-child { margin-bottom: 0; }
+		.explore-details .c-details >i { margin: 5px 1.5vw 0; }
+		.explore-details .c-details >span .divider-horizental { width: 1vw; }
+		.explore-details .c-details >span .title { font-family: 'microsoft yahei'; font-size: 18px; line-height: 32px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+		.explore-details .c-details >span .subtitle { font-family: 'microsoft yahei'; font-size: 12px; line-height: 20px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+		/*第三页*/
+		.fullscreen-scenic { position: absolute; left: 47.92vw; width: 53vw; top: 0; padding: 3.5vw 3vw 0; box-sizing: border-box; }
+		.fullscreen-scenic .title { font-family: 'FZLTHJW'; color: #e78a3d; margin-bottom: 2.5vw; }
+		.fullscreen-scenic .title p:first-child { font-weight: 600; font-size: 38px; }
+		.fullscreen-scenic .title p:first-child span { font-weight: 600; font-style: italic; font-size: 60px; margin-right: 1vw; }
+		.fullscreen-scenic .title p:last-child { font-size: 18px; }
+		.fullscreen-scenic .scenic-detail { margin-bottom: 20px; }
+		.fullscreen-scenic .scenic-detail p { font-family: 'microsoft yahei'; font-size: 14px; color: #333; line-height: 22px; }
+		.fullscreen-scenic .scenic-detail p:first-child { font-family: 'FZLTHJW'; font-size: 30px; font-weight: 600; margin-bottom: 20px; }
+		.fullscreen-scenic .scenic-info { color: #333; line-height: 22px; margin-bottom: 20px; }
+		.fullscreen-scenic .buy-tickets { color: #e78a3d; border: 1px solid #e78a3d; padding: 6px 2vw; margin-bottom: 20px; }
+
+		#scenic-swiper { height: 8.85vw; width: calc(8.85vw * 6); top: 3.5vw; left: -20.6vw; }
+		#button-prev { position: absolute; top: 97%; width: 27px; height: 44px; margin-top: -22px; z-index: 10; cursor: pointer; left: -23vw; }
+		#button-next { position: absolute; top: 97%; width: 27px; height: 44px; margin-top: -22px; z-index: 10; cursor: pointer; left: 37.1vw; }
+		#scenic-swiper .swiper-slide { background-color: rgba(255, 255, 255, .8); display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
+		#scenic-swiper .swiper-slide >i { color: #e78a3d }
+		#scenic-swiper .swiper-slide >p { color: #333; }
+		#scenic-swiper .swiper-slide .slider-title { font-family: 'FZLTHJW'; font-size: 1vw; font-weight: 600; }
+		#scenic-swiper .swiper-slide .slider-subtitle { font-family: 'microsoft yahei'; font-size: .8vw; }
+		#scenic-swiper .swiper-slide .divider-horizental { width: 3vw; background-color: #e78a3d; margin: 10px 0; }
+		#scenic-swiper .swiper-slide.active { background-color: rgba(231, 138, 61, .8); }
+		#scenic-swiper .swiper-slide.active >i { color: #FFF; }
+		#scenic-swiper .swiper-slide.active >p { color: #FFF }
+		#scenic-swiper .swiper-slide.active .divider-horizental { background-color: #fff }
+
+		/*第四页*/
+		.fullscreen-media { position: absolute; top: calc(50% - 31.5vh); left: calc(50% - 30vw); width: 60vw; height: 63vh; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; padding: .5vw; box-sizing: border-box; }
+		.fullscreen-media >div { height: 100%; width: 25%; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; margin-right: .5vw; text-align: center; background-color: rgba(231, 138, 61, .8); }
+		.fullscreen-media >div:last-child { margin-right: 0; }
+		.fullscreen-media >div >i { font-size: 3.5vw; margin-bottom: 1.25vw; }
+		.fullscreen-media >div .media-name { font-family: 'microsoft yahei'; font-size: 1.5vw; margin-bottom: 1.5vw; }
+		.fullscreen-media >div .divider-horizental { width: 3.5vw; margin-bottom: 1.5vw; }
+		.fullscreen-media >div .media-intro { font-family: 'microsoft yahei'; font-size: .8vw; margin-bottom: 2.5vw; }
+		.fullscreen-media >div .more-info { color: #FFF; padding: .5vw 1.25vw; border: 1px solid #FFF; }
+
+		/*第五页*/
+		.fullscreen-news { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; -ms-flex-align: center; align-items: center; }
+		.fullscreen-news .news-content { width: 100%; height: 55vh; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
+		.news-content .news-type { width: 15vw; height: 100%; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: start; align-items: flex-start; }
+		.news-content .news-type .news { font-family: 'FZLTHJW'; font-size: 1.5vw; line-height: 2; }
+		.news-content .news-type .english { font-family: 'Arial'; font-size: .9vw; line-height: 2; }
+		.news-content .news-type .type-details { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; }
+		.news-content .news-type .type-details >a { display: block; width: 7vw; height: 2vw; line-height: 2vw; color: #FFF; border: 1px solid #FFF; box-sizing: border-box; text-align: center; font-size: .7vw; margin: .75vw 0; }
+		.news-content .news-type .type-details >a.active { background-color: #FFF; color: #339aff; }
+		.news-content .news-type .news-pagination { width: 7vw; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-between; }
+		.news-content .news-type .news-pagination i { cursor: pointer; }
+		.news-content .news-list { width: 70vw; height: 100%; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; -ms-flex-align: center; align-items: center; }
+		.news-content .news-list .news-item { width: 25%; }
+		.news-content .news-list .news-item:last-child { opacity: .6; }
+		.news-content .news-list .divider-vertical { height: 100%; margin: 0 1.5vw; }
+		.news-list .news-item .date { font-family: 'Arial'; font-size: .7vw; margin-bottom: 1vw; }
+		.news-list .news-item .title { font-family: 'microsoft yahei'; font-size: .8vw; margin-bottom: .5vw; }
+		.news-list .news-item .type { font-family: 'microsoft yahei'; font-size: .6vw; margin-bottom: 1vw; display: -ms-flexbox; display: flex; -ms-flex-pack: start; justify-content: flex-start; -ms-flex-align: center; align-items: center; }
+		.news-list .news-item .type >i { margin-right: 5px; }
+		.news-list .news-item >img { width: 100%; margin-bottom: 1vw; }
+		.news-list .news-item .intro { font-family: 'microsoft yahei'; font-size: .6vw; margin-bottom: 1.5vw; }
+		.news-list .news-item .get-details >a { display: inline-block; padding: .5vw 1.5vw; color: #FFF; border: 1px solid #FFF; box-sizing: border-box; text-align: center; }
+
+		/*第六页*/
+		.fullscreen-tour { position: absolute; top: 22.5vh; left: 18.5vw; width: 63vw; height: 55vh; display: -ms-flexbox; display: flex; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-align: center; align-items: center; }
+		.fullscreen-tour .left { width: 25%; padding-right: 1.5vw; box-sizing: border-box; }
+		.fullscreen-tour .left .title { font-family: 'FZLTHJW'; font-size: 1.8vw; font-weight: 600; line-height: 1.35; }
+		.fullscreen-tour .left .english { font-family: 'Arail'; font-size: .75vw; line-height: 1.35; margin-bottom: 1.5vw; }
+		.fullscreen-tour .left .intro { font-family: 'microsoft yahei'; font-size: .7vw; line-height: 2; }
+		.fullscreen-tour .right { width: 75%; height: 100%; box-sizing: border-box; position: relative; }
+		.fullscreen-tour .right >div { background-color: rgba(231, 138, 61, .4); width: 6vw; height: 6vw; color: #FFF; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; position: absolute; z-index: 99 }
+		.fullscreen-tour .right >div:nth-child(1) { left: 7.25vw; top: 1.75vw; }
+		.fullscreen-tour .right >div:nth-child(2) { left: 13.25vw; top: 7.75vw; }
+		.fullscreen-tour .right >div:nth-child(3) { left: 7.25vw; top: 13.75vw; }
+		.fullscreen-tour .right >div:nth-child(4) { left: 19.25vw; top: 13.75vw; }
+		.fullscreen-tour .right >div:nth-child(5) { left: 25.25vw; top: 7.75vw; }
+		.fullscreen-tour .right >div:nth-child(6) { left: 31.25vw; top: 1.75vw; }
+		.fullscreen-tour .right >div:nth-child(7) { left: 31.25vw; top: 13.75vw; }
+		.fullscreen-tour .right >div:nth-child(8) { left: 0; top: 6vw; }
+		.fullscreen-tour .right >div:nth-child(9) { left: 2.25vw; top: 21.25vw; }
+		.fullscreen-tour .right >div:nth-child(10) { left: 20vw; top: 0; }
+		.fullscreen-tour .right >div:nth-child(11) { left: 23.5vw; top: 21.25vw; }
+		.fullscreen-tour .right >div:nth-child(12) { left: 38.5vw; top: 6.5vw; }
+		.fullscreen-tour .right .has-ctn { z-index: 999; background-color: rgba(231, 138, 61, .8); cursor: pointer; }
 		@-webkit-keyframes ball-scale-ripple-multiple {
 			0% { -webkit-transform: scale(0.1); transform: scale(0.1); opacity: 1; }
 			70% { -webkit-transform: scale(1); transform: scale(1); opacity: 0.7; }
@@ -500,7 +648,7 @@
 
 	        <div class="swiper-slide">
 				<div class="fullscreen">
-					<img src="./imgs/test1.png" alt=""/>
+					<img src="./imgs/test6.jpg" alt=""/>
 					<div class="fullscreen-content">
 						<div class="fullscreen-header">
 							<div class="left">
@@ -515,6 +663,60 @@
 										<p class="temperature_curr">0℃</p>
 									</span>
 								</span>
+							</div>
+						</div>
+						<div class="fullscreen-news">
+							<div class="news-content">
+								<div class="news-type">
+									<p class="news">新闻动态</p>
+									<p class="english">NEWS AND TRENDS</p>
+									<div class="type-details">
+										<a href="javascript:;" class="tour-info">旅游信息</a>
+										<a href="javascript:;" class="work active">工作动态</a>
+										<a href="javascript:;" class="notice">通知公告</a>
+									</div>
+									<div class="news-pagination">
+										<i class="tld-icon tld-left-o fs-32"></i>
+										<i class="tld-icon tld-right-o fs-32"></i>
+									</div>
+								</div>
+								<div class="news-list">
+									<div class="news-item">
+										<p class="date">2018/11/20</p>
+										<p class="title">龙洞景区“中秋节”亮点纷呈的活动期待您的加呈的活动待您的待呈您的的活动入！</p>
+										<p class="type"><i class="tld-new tld-new-news-pop fs-16"></i>旅游信息</p>
+										<img src="./imgs/news_item_01.png" alt="">
+										<p class="intro">夏热刚退，秋爽即来，腾龙洞的秋天又是别有一番天地的景致！登高望远，层林尽染；置身洞穴，沁人心脾……，中秋节，亮点纷呈的活动正在火热筹备中，期待您的加入。</p>
+										<p class="get-details"><a href="javascript:;">点击了解</a></p>
+									</div>
+									<span class="divider-vertical"></span>
+									<div class="news-item">
+										<p class="date">2018/11/20</p>
+										<p class="title">龙洞景区“中秋节”亮点纷呈的活动期待您的加呈的活动待您的待呈您的的活动入！</p>
+										<p class="type"><i class="tld-new tld-new-news-pop fs-16"></i>旅游信息</p>
+										<img src="./imgs/news_item_02.png" alt="">
+										<p class="intro">夏热刚退，秋爽即来，腾龙洞的秋天又是别有一番天地的景致！登高望远，层林尽染；置身洞穴，沁人心脾……，中秋节，亮点纷呈的活动正在火热筹备中，期待您的加入。</p>
+										<p class="get-details"><a href="javascript:;">点击了解</a></p>
+									</div>
+									<span class="divider-vertical"></span>
+									<div class="news-item">
+										<p class="date">2018/11/20</p>
+										<p class="title">龙洞景区“中秋节”亮点纷呈的活动期待您的加呈的活动待您的待呈您的的活动入！</p>
+										<p class="type"><i class="tld-new tld-new-news-pop fs-16"></i>旅游信息</p>
+										<img src="./imgs/news_item_03.png" alt="">
+										<p class="intro">夏热刚退，秋爽即来，腾龙洞的秋天又是别有一番天地的景致！登高望远，层林尽染；置身洞穴，沁人心脾……，中秋节，亮点纷呈的活动正在火热筹备中，期待您的加入。</p>
+										<p class="get-details"><a href="javascript:;">点击了解</a></p>
+									</div>
+									<span class="divider-vertical"></span>
+									<div class="news-item">
+										<p class="date">2018/11/20</p>
+										<p class="title">龙洞景区“中秋节”亮点纷呈的活动期待您的加呈的活动待您的待呈您的的活动入！</p>
+										<p class="type"><i class="tld-new tld-new-news-pop fs-16"></i>旅游信息</p>
+										<img src="./imgs/news_item_01.png" alt="">
+										<p class="intro">夏热刚退，秋爽即来，腾龙洞的秋天又是别有一番天地的景致！登高望远，层林尽染；置身洞穴，沁人心脾……，中秋节，亮点纷呈的活动正在火热筹备中，期待您的加入。</p>
+										<p class="get-details"><a href="javascript:;">点击了解</a></p>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="fullscreen-footer jc-fe">
@@ -534,7 +736,7 @@
 
 	        <div class="swiper-slide" id="need-scroll">
 		        <div class="fullscreen">
-		        	<img src="./imgs/test3.jpg" alt=""/>
+		        	<img src="./imgs/test7.jpg" alt=""/>
 					<div class="fullscreen-content">
 						<div class="fullscreen-header">
 							<div class="left">
@@ -549,6 +751,48 @@
 										<p class="temperature_curr">0℃</p>
 									</span>
 								</span>
+							</div>
+						</div>
+						<div class="fullscreen-tour">
+							<div class="left">
+								<p class="title">旅游攻略</p>
+								<p class="english">TRAVELLING GUIDELINE</p>
+								<p class="intro">利川更是一座生态宜居的旅游之城。这里林海苍翠、空气清新、冬无严寒、夏无酷暑，被誉为“天然氧吧”，因利川的夏秋季平均只有23度，又有“凉城利川”之称。利川有世界特级溶洞腾龙洞，并且以它为龙头，由卡斯特地貌经过千万年地质变迁，形成了龙船水乡、玉龙洞、朝阳洞等溶洞群落；有以中国南方享有盛誉的齐岳山为首的休闲避暑山地群落，其中有佛宝山、甘溪山、星斗山；有保存完好的江南明清庄园大水井古建筑群落。还有千年古堡鱼木寨，有生态度假风情小镇苏马荡，有天下第一杉水杉王等等……</p>
+							</div>
+							<div class="right">
+								<div class="has-ctn">
+									<i class="tld-new tld-new-food fs-28"></i>
+									<p>特产美食</p>
+								</div>
+								<div class="has-ctn">
+									<i class="tld-new tld-new-food fs-28"></i>
+									<p>特产美食</p>
+								</div>
+								<div class="has-ctn">
+									<i class="tld-new tld-new-food fs-28"></i>
+									<p>特产美食</p>
+								</div>
+								<div class="has-ctn">
+									<i class="tld-new tld-new-food fs-28"></i>
+									<p>特产美食</p>
+								</div>
+								<div class="has-ctn">
+									<i class="tld-new tld-new-food fs-28"></i>
+									<p>特产美食</p>
+								</div>
+								<div class="has-ctn">
+									<i class="tld-new tld-new-food fs-28"></i>
+									<p>特产美食</p>
+								</div>
+								<div class="has-ctn">
+									<i class="tld-new tld-new-food fs-28"></i>
+									<p>特产美食</p>
+								</div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
 							</div>
 						</div>
 						<div class="fullscreen-footer jc-fe">
@@ -680,12 +924,11 @@
 	        direction: 'vertical',
 	        loop: false,
 	        speed: 800, 
-	        autoplay: false, 
-	        // autoplay: {
-	        //     delay: interval,
-	        //     stopOnLastSlide: true,
-	        //     disableOnInteraction: true,
-	        // },
+	        autoplay: {
+	            delay: interval,
+	            stopOnLastSlide: true,
+	            disableOnInteraction: true,
+	        },
 	        pagination: {
 	            el: '.swiper-pagination',
 	            clickable: false,
@@ -760,15 +1003,6 @@
         	})
         }
 	    
-
-
-
-
-
-
-
-
-
         // 天气
     	// $.ajax({
     	//     type: 'get',
